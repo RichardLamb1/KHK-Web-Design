@@ -1,0 +1,290 @@
+/* ==========================================
+   MEMBERS PAGE STYLES
+   ========================================== */
+
+/* ==========================================
+   MEMBERS HEADER SECTION
+   ========================================== */
+
+.members-header {
+    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+    color: white;
+    border-bottom: 3px solid #ffc72c;
+}
+
+.members-crest {
+    max-width: 150px;
+    height: auto;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.members-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.members-header h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   MEMBERS GRID
+   ========================================== */
+
+.members-section {
+    background: #f8f9fa;
+    padding: 4rem 0;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* ==========================================
+   MEMBER CARD STYLES
+   ========================================== */
+
+.member-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(74, 31, 111, 0.2);
+}
+
+/* Member Image Wrapper */
+.member-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+}
+
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.member-card:hover .member-image {
+    transform: scale(1.08);
+}
+
+/* Member Overlay */
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(74, 31, 111, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.member-card:hover .member-overlay {
+    opacity: 1;
+}
+
+/* Social Links on Overlay */
+.member-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 199, 44, 0.15);
+    border-radius: 50%;
+    color: #ffc72c;
+    transition: all 0.3s ease;
+    border: 2px solid #ffc72c;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-btn:hover {
+    background: #ffc72c;
+    color: #4a1f6f;
+    transform: scale(1.15) translateY(-5px);
+}
+
+/* Member Info */
+.member-info {
+    padding: 1.5rem;
+}
+
+.member-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4a1f6f;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.member-card:hover .member-name {
+    color: #c41e3a;
+}
+
+.member-position {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.member-pledge {
+    font-size: 0.85rem;
+    color: #999;
+    background: #f0f0f0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation for member cards */
+.member-card:nth-child(1) { animation-delay: 0.05s; }
+.member-card:nth-child(2) { animation-delay: 0.1s; }
+.member-card:nth-child(3) { animation-delay: 0.15s; }
+.member-card:nth-child(4) { animation-delay: 0.2s; }
+.member-card:nth-child(5) { animation-delay: 0.25s; }
+.member-card:nth-child(6) { animation-delay: 0.3s; }
+.member-card:nth-child(7) { animation-delay: 0.35s; }
+.member-card:nth-child(8) { animation-delay: 0.4s; }
+.member-card:nth-child(n+9) { animation-delay: 0.45s; }
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 1200px) {
+    .members-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .members-header {
+        padding: 2rem 0;
+    }
+
+    .members-crest {
+        max-width: 120px;
+    }
+
+    .members-header h1 {
+        font-size: 2rem;
+    }
+
+    .members-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .members-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .member-image-wrapper {
+        height: 250px;
+    }
+
+    .member-card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .members-section {
+        padding: 2rem 0;
+    }
+
+    .members-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .members-header h2 {
+        font-size: 1rem;
+    }
+
+    .members-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .member-image-wrapper {
+        height: 280px;
+    }
+
+    .member-info {
+        padding: 1rem;
+    }
+
+    .member-name {
+        font-size: 1rem;
+    }
+
+    .member-position {
+        font-size: 0.9rem;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================
+   UTILITIES
+   ========================================== */
+
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Scroll animations */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
