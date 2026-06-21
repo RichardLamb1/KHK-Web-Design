@@ -180,6 +180,7 @@ function initializeIntersectionObserver() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0');
                 entry.target.classList.add('fade-in');
                 observer.unobserve(entry.target);
             }
@@ -187,7 +188,8 @@ function initializeIntersectionObserver() {
     }, observerOptions);
     
     // Observe all cards and images
-    document.querySelectorAll('.event-card, .gallery-item, .member-stat, .about-section img').forEach(el => {
+    document.querySelectorAll('.event-card, .gallery-item, .member-stat, .about-section img, .rush-section img, .alumni-section img').forEach(el => {
+        el.classList.add('opacity-0'); // Start hidden
         observer.observe(el);
     });
 }
@@ -244,4 +246,4 @@ document.addEventListener('mousedown', function() {
 // ==========================================
 
 console.log('%cWelcome to KHK Delta Chapter website!', 'color: #c41e3a; font-size: 16px; font-weight: bold;');
-console.log('%cKappa Eta Kappa - University of Wisconsin-Madison', 'color: #1e3a5f; font-size: 12px;');
+console.log('%cIf you\'re hacking around in here... then you should totally join!', 'color: #ffc72c; font-size: 12px;');

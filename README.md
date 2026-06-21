@@ -1,12 +1,12 @@
-# KHK Delta Chapter - Official Website
+# KHK Delta Chapter - HTML Templates
 
-Welcome to the official website for Kappa Eta Kappa, Delta Chapter at the University of Wisconsin-Madison.
+This repository contains core HTML, CSS, and JavaScript for Kappa Eta Kappa, Delta Chapter at the University of Wisconsin-Madison.
 
 ## Overview
 
-This is a modern, responsive website for KHK Delta Chapter, a co-ed professional fraternity for Electrical Engineering and Computer Science students at UW-Madison. The site showcases our professional events, social activities, member community, and alumni network.
+This is a modern, responsive website for Kappa Eta Kappa, a co-ed professional fraternity for Electrical Engineering and Computer Science students. Originally designed for use at Delta Chapter, other chapters of KHK are welcome to use this material as well.
 
-## Features
+## Goals
 
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - **Modern UI/UX**: Clean, professional design with smooth animations
@@ -26,20 +26,22 @@ This is a modern, responsive website for KHK Delta Chapter, a co-ed professional
 ## Project Structure
 
 ```
-KHK Web Design/
-├── index.html                 # Main homepage
+/
+├── index.html                # Main homepage
 ├── css/
-│   └── style.css             # Custom CSS styles
+│   ├── style.css             # Main stylesheet
+│   └── ...                   # Additional styles for subpages
 ├── js/
-│   └── script.js             # Custom JavaScript functionality
-└── assets/
-    ├── fonts/                # Font files
-    ├── img/                  # Image files (event photos, member photos)
-    │   └── members/          # Member directory images
-    └── svg/                  # SVG files (logos, crests, icons)
+│   └── main.js               # Main script
+├── assets/
+│   ├── fonts/                # Font files
+│   ├── img/                  # Image files (event photos, member photos)
+│   │   └── members/          # Member directory images
+│   └── svg/                  # SVG files (logos, crests, icons)
+└ ...                         # Additional pages
 ```
 
-## Technologies Used
+## Tech Stack
 
 - **HTML5**: Semantic markup structure
 - **CSS3**: Modern styling with animations and gradients
@@ -56,8 +58,8 @@ KHK Web Design/
 - Smooth scroll to sections when links are clicked
 
 ### Color Scheme
-- **Primary**: #1e3a5f (Navy Blue)
-- **Secondary**: #c41e3a (KHK Red)
+- **Primary**: #4a1f6f (Purple)
+- **Secondary**: #c41e3a (Red)
 - **Accent**: #ffc72c (Gold)
 
 ### Animations & Effects
@@ -65,11 +67,6 @@ KHK Web Design/
 - Hover effects on buttons and cards
 - Smooth transitions throughout
 - Scroll-to-top button appears after scrolling down
-
-### Form Handling
-- Email validation for newsletter signup
-- Success/error notifications
-- Form reset after submission
 
 ### Accessibility
 - Semantic HTML5 elements
@@ -129,43 +126,23 @@ Update placeholder links in `index.html`:
 - **Small (sm)**: 576px - 767px
 - **Extra Small (xs)**: Below 576px
 
-## Future Enhancements
+## Roadmap
 
-Potential features to add:
-- Event calendar with registration
-- Member directory/login portal
-- Blog/news section
-- Photo gallery with lightbox
-- Contact form
-- Event RSVP system
-- Alumni spotlight section
-- Donation/fundraising page
+Short term:
+- Finalize design, HTML layouts, and page content
+- Collaborate with design team for more specific details
 
-## Getting Started
-
-1. Open `index.html` in a web browser
-2. Navigate through sections using the top menu
-3. Update content and links as needed
-4. Test on different devices to ensure responsiveness
-5. Deploy to your web hosting service
-
-## File Sizes
-
-- index.html: ~20KB
-- css/style.css: ~15KB
-- js/script.js: ~6KB
-
-Total (without external CDN files): ~41KB
-
-## Support & Maintenance
-
-For questions or assistance with the website, contact the Delta Chapter web team at contact@delta.khk.org
+Long term:
+- Migration to a static content manager (Jekyll, Hugo, etc)
+- Possible backend integration with login system
+  - Issue each member a login so they can update their composite photo and links
 
 ## License
 
-Website content is the property of Kappa Eta Kappa, Delta Chapter. All rights reserved.
+Website content (C) 2026 Delta of Kappa Eta Kappa. All rights reserved.
+
+Website tools (HTML, CSS, JS) (C) 2026 Richard Lamb. License TBD.
 
 ---
 
-**Last Updated**: 2024
-**Version**: 1.0.0
+**Last Updated**: 2026
