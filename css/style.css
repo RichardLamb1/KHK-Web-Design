@@ -152,6 +152,11 @@ body {
    BUTTON STYLES
    ========================================== */
 
+.btn {
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
 .btn-primary {
     background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
     border: none;
@@ -163,6 +168,17 @@ body {
     background: linear-gradient(135deg, #a01829 0%, #7a1220 100%);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(196, 30, 58, 0.3);
+}
+
+.btn-outline-light {
+    border-width: 2px;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 /* ==========================================
