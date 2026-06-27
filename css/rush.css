@@ -282,3 +282,34 @@
         width: 100%;
     }
 }
+
+/* ==========================================
+   EVENT DETAILS
+   ========================================== */
+
+.event-details {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.event-details li {
+    position: relative;
+}
+
+.event-details li::before {
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;
+    position: absolute;
+}
+
+.event-details li.icon-clock::before {
+    content: '\f017';
+    left: -1.5rem;
+    top: 0.1rem;
+}
+
+.event-details li.icon-location::before {
+    content: '\f3c5';
+    left: -1.375rem;
+    top: 0.1rem;
+}

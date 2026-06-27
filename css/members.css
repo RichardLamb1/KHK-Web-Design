@@ -41,6 +41,24 @@
     padding: 4rem 0;
 }
 
+.executive-board-section {
+    background: linear-gradient(180deg, #ffffff 0%, #faf6ff 100%);
+    padding: 4rem 0 1rem;
+}
+
+.executive-board-lead {
+    color: #5c5c6d;
+    max-width: 46rem;
+}
+
+.executive-board-grid {
+    margin-top: 0.5rem;
+}
+
+.executive-board-card {
+    border-top: 4px solid #4a1f6f;
+}
+
 .members-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
