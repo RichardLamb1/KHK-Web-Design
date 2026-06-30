@@ -3,12 +3,34 @@
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    initializeColorMode();
     initializeScrollBehavior();
     initializeScrollToTopButton();
     initializeFormHandling();
     initializeNavigationHighlight();
     initializeIntersectionObserver();
 });
+
+// ==========================================
+// COLOR MODE SYNC
+// ==========================================
+
+function initializeColorMode() {
+    const root = document.documentElement;
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applyColorMode = event => {
+        root.setAttribute('data-bs-theme', event.matches ? 'dark' : 'light');
+    };
+
+    applyColorMode(mediaQuery);
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+        mediaQuery.addEventListener('change', applyColorMode);
+    } else if (typeof mediaQuery.addListener === 'function') {
+        mediaQuery.addListener(applyColorMode);
+    }
+}
 
 // ==========================================
 // SMOOTH SCROLL BEHAVIOR

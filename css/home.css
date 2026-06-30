@@ -117,7 +117,7 @@
    ========================================== */
 
 .about-section {
-    background: #ffffff;
+    background: var(--surface-bg);
 }
 
 .about-section h2 {
@@ -125,8 +125,14 @@
     font-weight: 800;
 }
 
+@media (prefers-color-scheme: dark) {
+    .about-section h2 {
+        color: var(--text-primary);
+    }
+}
+
 .about-section p {
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.05rem;
 }
@@ -144,7 +150,7 @@
    ========================================== */
 
 .events-section {
-    background: #f8f9fa;
+    background: var(--surface-bg-alt);
 }
 
 .events-section h2 {
@@ -153,13 +159,20 @@
     margin-bottom: 3rem;
 }
 
+@media (prefers-color-scheme: dark) {
+    .events-section h2 {
+        color: var(--text-primary);
+    }
+}
+
 .event-card {
-    background: white;
+    background: var(--surface-bg);
     padding: 2.5rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px var(--shadow-color);
     transition: all 0.3s ease;
     border-top: 4px solid transparent;
+    border: 1px solid var(--border-color);
 }
 
 .professional-card {
@@ -172,7 +185,7 @@
 
 .event-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px var(--shadow-color);
 }
 
 .event-icon {
@@ -194,8 +207,14 @@
     margin-bottom: 1.5rem;
 }
 
+@media (prefers-color-scheme: dark) {
+    .event-card h3 {
+        color: var(--text-primary);
+    }
+}
+
 .event-card ul li {
-    color: #666;
+    color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.8;
 }
@@ -226,7 +245,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(29, 58, 95, 0.8);
+    background: rgba(60, 25, 91, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -251,7 +270,7 @@
    ========================================== */
 
 .rush-section {
-    background: white;
+    background: var(--surface-bg);
 }
 
 .rush-section h2 {
@@ -259,18 +278,24 @@
     font-weight: 800;
 }
 
+@media (prefers-color-scheme: dark) {
+    .rush-section h2 {
+        color: var(--text-primary);
+    }
+}
+
 .rush-section h4 {
     color: var(--secondary-color);
 }
 
 .rush-section p {
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.05rem;
 }
 
 .rush-section ul li {
-    color: #666;
+    color: var(--text-secondary);
 }
 
 /* ==========================================
@@ -278,7 +303,7 @@
    ========================================== */
 
 .members-section {
-    background: #f8f9fa;
+    background: var(--surface-bg-alt);
 }
 
 .members-section h2 {
@@ -286,17 +311,24 @@
     font-weight: 800;
 }
 
+@media (prefers-color-scheme: dark) {
+    .members-section h2 {
+        color: var(--text-primary);
+    }
+}
+
 .member-stat {
     padding: 2rem;
-    background: white;
+    background: var(--surface-bg);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px var(--shadow-color);
     transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .member-stat:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px var(--shadow-color);
 }
 
 .member-stat h3 {
@@ -304,7 +336,7 @@
 }
 
 .member-stat p {
-    color: #666;
+    color: var(--text-secondary);
     margin: 0;
     font-weight: 500;
 }
@@ -314,7 +346,7 @@
    ========================================== */
 
 .alumni-section {
-    background: white;
+    background: var(--surface-bg);
 }
 
 .alumni-section h2 {
@@ -322,8 +354,14 @@
     font-weight: 800;
 }
 
+@media (prefers-color-scheme: dark) {
+    .alumni-section h2 {
+        color: var(--text-primary);
+    }
+}
+
 .alumni-section p {
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.05rem;
 }
@@ -333,7 +371,7 @@
    ========================================== */
 
 .newsletter-section {
-    background: #f8f9fa;
+    background: var(--surface-bg-alt);
 }
 
 .newsletter-section h2 {
@@ -341,16 +379,26 @@
     font-weight: 800;
 }
 
+@media (prefers-color-scheme: dark) {
+    .newsletter-section h2 {
+        color: var(--text-primary);
+    }
+}
+
 .newsletter-form input {
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 50px 0 0 50px;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    background: var(--surface-bg);
+    color: var(--text-primary);
 }
 
 .newsletter-form input:focus {
     box-shadow: none;
     border-color: var(--primary-color);
+    background: var(--surface-bg);
+    color: var(--text-primary);
 }
 
 .newsletter-form button {
