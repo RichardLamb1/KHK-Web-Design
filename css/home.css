@@ -245,7 +245,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(60, 25, 91, 0.6);
+    background: rgba(74, 31, 111, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,44 +266,11 @@
 }
 
 /* ==========================================
-   RUSH SECTION
-   ========================================== */
-
-.rush-section {
-    background: var(--surface-bg);
-}
-
-.rush-section h2 {
-    color: var(--primary-color);
-    font-weight: 800;
-}
-
-@media (prefers-color-scheme: dark) {
-    .rush-section h2 {
-        color: var(--text-primary);
-    }
-}
-
-.rush-section h4 {
-    color: var(--secondary-color);
-}
-
-.rush-section p {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    font-size: 1.05rem;
-}
-
-.rush-section ul li {
-    color: var(--text-secondary);
-}
-
-/* ==========================================
    MEMBERS SECTION
    ========================================== */
 
 .members-section {
-    background: var(--surface-bg-alt);
+    background: var(--surface-bg);
 }
 
 .members-section h2 {
@@ -339,6 +306,39 @@
     color: var(--text-secondary);
     margin: 0;
     font-weight: 500;
+}
+
+/* ==========================================
+   RUSH SECTION
+   ========================================== */
+
+.rush-section {
+    background: var(--surface-bg-alt);
+}
+
+.rush-section h2 {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+@media (prefers-color-scheme: dark) {
+    .rush-section h2 {
+        color: var(--text-primary);
+    }
+}
+
+.rush-section h4 {
+    color: var(--secondary-color);
+}
+
+.rush-section p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.rush-section ul li {
+    color: var(--text-secondary);
 }
 
 /* ==========================================

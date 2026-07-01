@@ -80,7 +80,7 @@
 
 .rush-section,
 .rush-faq,
-.rush-instagram {
+.rush-socials {
     position: relative;
 }
 
@@ -231,6 +231,20 @@
     flex: 0 0 auto;
 }
 
+.linkedin-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(45deg, #0a66c2 0%, #691f62 100%);
+    box-shadow: 0 12px 24px rgba(74, 31, 111, 0.2);
+    font-size: 1.2rem;
+    flex: 0 0 auto;
+}
+
 .instagram-frame {
     border-radius: 1rem;
     overflow: hidden;
@@ -264,7 +278,7 @@
     .rush-hero,
     .rush-section,
     .rush-faq,
-    .rush-instagram {
+    .rush-socials {
         text-align: left;
     }
 

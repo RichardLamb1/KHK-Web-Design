@@ -115,73 +115,49 @@
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="events-section py-5 bg-light">
-        <div class="container">
-            <h2 class="display-5 fw-bold text-center mb-5">What We Do</h2>
-            <div class="row g-4">
-                <!-- Professional Events -->
-                <div class="col-lg-6 col-md-6">
-                    <div class="event-card professional-card h-100">
-                        <div class="event-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3 class="h4 fw-bold mb-3">Professional Development</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Resume Workshops</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Industry Talks</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Study Nights</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Networking Events</li>
-                            <li><i class="fas fa-check text-success me-2"></i>Career Guidance</li>
-                        </ul>
+    <style>
+        .bs-theme-override h5, .bs-theme-override p {
+            color: #FFFFFF !important;
+        }
+        .bs-theme-override .carousel-control-prev-icon,
+        .bs-theme-override .carousel-control-next-icon {
+            filter: none !important;
+        }
+    </style>
+    <section id="events" class="events-section pt-5 bg-light bs-theme-override">
+        <h2 class="display-5 fw-bold text-center mb-5">What We Do</h2>
+        <div id="what-we-do-carousel" class="carousel slide" style="max-height: 500px; overflow: hidden;" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/resume_workshop.jpg" alt="Resume Workshop" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(0.7);">
+                    <div class="carousel-caption text-start d-none d-md-block">
+                        <h5 class="h2">Professional Development</h5>
+                        <p>Resume Workshops, Industry Talks, Study Nights, Networking Events, Career Guidance</p>
                     </div>
                 </div>
-
-                <!-- Social Events -->
-                <div class="col-lg-6 col-md-6">
-                    <div class="event-card social-card h-100">
-                        <div class="event-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="h4 fw-bold mb-3">Social Events</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i>Bowling Nights</li>
-                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i>Golf Outings</li>
-                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i>Video Game Tournaments</li>
-                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i>Themed Parties</li>
-                            <li><i class="fas fa-check text-info me-2"></i>Fraternity Bonding</li>
-                        </ul>
+                <div class="carousel-item">
+                    <img src="assets/img/executive_board.jpg" alt="Executive Board" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(0.7);">
+                    <div class="carousel-caption text-start d-none d-md-block">
+                        <h5 class="h2">Executive Board</h5>
+                        <p>Leadership Opportunities, Decision Making, Strategic Planning</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/spring_2025_casino_night.jpg" alt="Casino Night" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(0.7);">
+                    <div class="carousel-caption text-start d-none d-md-block">
+                        <h5 class="h2">Social Events</h5>
+                        <p>Entertainment, Socializing, Fundraising</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Gallery -->
-            <div class="row g-4 mt-5 pt-5">
-                <h3 class="fw-bold mb-4">Moments from Our Events</h3>
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="assets/img/resume_workshop.jpg" alt="Resume Workshop" class="img-fluid rounded-3">
-                        <div class="gallery-overlay">
-                            <p>Resume Workshop</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="assets/img/executive_board.jpg" alt="Executive Board" class="img-fluid rounded-3">
-                        <div class="gallery-overlay">
-                            <p>Executive Leadership</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="assets/img/spring_2025_casino_night.jpg" alt="Casino Night" class="img-fluid rounded-3">
-                        <div class="gallery-overlay">
-                            <p>Social Events</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#what-we-do-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#what-we-do-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 

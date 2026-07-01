@@ -27,7 +27,12 @@ function initializeMemberCardFlips() {
                 <div class="member-card-face member-card-back" aria-hidden="true">
                     <img src="assets/img/sillydog.jpg" alt="Playful chapter placeholder" class="member-back-image">
                     <h3 class="member-back-title">${escapeHtml(memberName)}'s Secret Snack Side</h3>
-                    <p class="member-back-blurb">This side of the card has been temporarily hijacked by a very dignified dog in a pink wig. It exists to remind the chapter that even serious engineers need a little nonsense.</p>
+                    <p class="member-back-blurb">Put some good quotes channel content here.</p>
+                    <div class="member-social">
+                        <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn" title="Snapchat"><i class="fab fa-snapchat"></i></a>
+                        <a href="#" class="social-btn" title="Steam"><i class="fab fa-steam"></i></a>
+                    </div>
                     <p class="member-back-meta">${escapeHtml(memberPosition)} · ${escapeHtml(memberPledge)}</p>
                 </div>
             </div>
