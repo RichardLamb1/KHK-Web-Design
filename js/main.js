@@ -267,5 +267,17 @@ document.addEventListener('mousedown', function() {
 // CONSOLE MESSAGE
 // ==========================================
 
-console.log('%cWelcome to KHK Delta Chapter website!', 'color: #c41e3a; font-size: 16px; font-weight: bold;');
-console.log('%cIf you\'re hacking around in here... then you should totally join!', 'color: #ffc72c; font-size: 12px;');
+function displayConsoleMessage() {
+    console.log('%cWelcome to KHK Delta Chapter website!', 'color: #c41e3a; font-size: 16px; font-weight: bold;');
+    console.log('%cIf you\'re hacking around in here... then you should totally join!', 'color: #ffc72c; font-size: 12px;');
+}
+
+var consoleMessageShown = 0;
+displayConsoleMessage();
+window.addEventListener('resize', () => {
+    // Display the console message if the user opens the inspect window, but only do this once to avoid spamming
+    if (!consoleMessageShown) {
+        displayConsoleMessage();
+        consoleMessageShown = 1;
+    }
+});

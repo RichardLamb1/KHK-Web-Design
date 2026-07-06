@@ -80,7 +80,8 @@
 
 .rush-section,
 .rush-faq,
-.rush-socials {
+.rush-socials,
+.rush-testimonials {
     position: relative;
 }
 
@@ -278,7 +279,9 @@
     .rush-hero,
     .rush-section,
     .rush-faq,
-    .rush-socials {
+    .rush-socials,
+    .rush-testimonials,
+    .interest-section {
         text-align: left;
     }
 
@@ -309,6 +312,62 @@
     .instagram-copy .btn-lg {
         width: 100%;
     }
+}
+
+.interest-form input {
+    border: 1px solid var(--border-color);
+    border-radius: 50px 0 0 50px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background: var(--surface-bg);
+    color: var(--text-primary);
+}
+
+.interest-form input:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+    background: var(--surface-bg);
+    color: var(--text-primary);
+}
+
+.interest-form button {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
+    border: none;
+    border-radius: 0 50px 50px 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.interest-form button:hover {
+    transform: translateX(3px);
+    box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+}
+
+.testimonial-photo {
+    border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+    .testimonial-photo {
+        display: none !important;
+    }
+}
+
+.testimonial-content {
+    font-size: 1.05rem;
+}
+
+.testimonial-text {
+    color: var(--text-secondary);
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.testimonial-author:before {
+    content: '— ';
 }
 
 /* ==========================================
