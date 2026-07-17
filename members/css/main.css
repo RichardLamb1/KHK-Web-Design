@@ -17,6 +17,62 @@
     box-shadow: 0 22px 42px var(--shadow-color);
 }
 
+/* Buttons */
 .btn-primary:hover {
     transform: none;
+}
+
+/* Accordians */
+.accordion .accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 12px 30px var(--shadow-color);
+    margin-bottom: 1rem;
+}
+
+.accordion .accordion-button {
+    font-weight: 700;
+    color: var(--text-primary);
+    background: var(--surface-bg);
+    padding: 1.2rem 1.25rem;
+}
+
+.accordion .accordion-button:not(.collapsed) {
+    color: #fff;
+    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
+    box-shadow: none;
+}
+
+.accordion .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(74, 31, 111, 0.18);
+}
+
+.accordion .accordion-body {
+    padding: 1.15rem 1.25rem 1.35rem;
+    color: var(--text-secondary);
+    background: var(--surface-bg);
+}
+
+/* Inputs */
+.form-control {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background: var(--surface-bg);
+    color: var(--text-primary);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+    background: var(--surface-bg);
+    color: var(--text-primary);
+}
+
+/* Modals */
+.modal-content {
+    border: 1px solid var(--border-color);
+    background: var(--surface-bg);
+    color: var(--text-primary);
 }

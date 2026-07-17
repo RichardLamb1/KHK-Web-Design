@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHK Member Services</title>
+
+    <script>
+        (function () {
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-bs-theme', prefersDark ? 'dark' : 'light');
+        })();
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#home">
+                <img src="../assets/svg/logo.svg" alt="KHK Logo" class="navbar-logo">
+                <span class="ms-2">KHK Member Services</span>
+            </a>
+            <div class="dropdown me-3">
+                <a class="d-block link-body-emphasis text-decoration-none dropdown-toggle remove-arrow" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../assets/img/profile.jpg" alt="Profile" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                    <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Security</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="securityAccordian" class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Change Password
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#securityAccordian">
+                            <div class="accordion-body">
+                                <p>To change your password, please enter your current password and the new password you would like to use. After submitting, the system will log you out and you will need to log in with your new password. To keep KHK secure, your password must meet the following requirements:</p>
+                                <ul>
+                                    <li>At least 8 characters long</li>
+                                    <li>Contains at least one uppercase letter</li>
+                                    <li>Contains at least one lowercase letter</li>
+                                    <li>Contains at least one number</li>
+                                    <li>Contains at least one special character (e.g., !@#$%^&*)</li>
+                                    <li>Does not contain any dictionary words, names, your username, email addresses, phone numbers, or other easily guessable information</li>
+                                </ul>
+                                <form id="changePasswordForm">
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Current Password</label>
+                                        <input type="password" class="form-control" id="currentPassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="newPassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="confirmNewPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Change Password</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Two-Factor Authentication
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#securityAccordian">
+                            <div class="accordion-body">
+                                <p>Enable two-factor authentication (2FA) for added security. You will need to use an authenticator app to generate a code each time you log in.</p>
+                                <p class="text-warning">As an [administrator | executive board member], you're required to have two-factor authentication enabled for your account. If you disable it, you will lose access to administrative functions until it is re-enabled.</p>
+                                <button class="btn btn-primary" data-bs-target="#preTwoFAModal" data-bs-toggle="modal">Enable 2FA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Pre-2FA Setup -->
+    <div class="modal fade" id="preTwoFAModal" tabindex="-1" aria-labelledby="preTwoFAModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preTwoFAModalLabel">Warning</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>The following steps will display a QR code which contains sensitive information. Please ensure you are in a secure location.</p>
+                    <button class="btn btn-primary" data-bs-target="#twoFAModal" data-bs-toggle="modal" data-bs-dismiss="modal">Set Up 2FA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for 2FA Setup -->
+    <div class="modal fade" id="twoFAModal" tabindex="-1" aria-labelledby="twoFAModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="twoFAModalLabel">Set Up Two-Factor Authentication</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>To set up two-factor authentication, please scan the QR code below with your authenticator app (e.g., Google Authenticator, Authy) and enter the generated code to verify.</p>
+                    <div class="text-center mb-3">
+                        <img src="../assets/img/qr-code-placeholder.png" alt="QR Code" class="img-fluid">
+                    </div>
+                    <form id="verify2FAForm">
+                        <div class="mb-3">
+                            <label for="authenticatorCode" class="form-label">Authenticator Code</label>
+                            <input type="text" class="form-control" id="authenticatorCode" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Verify</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
