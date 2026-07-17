@@ -1,0 +1,22 @@
+/* Dropdown toggle remove arrow */
+.dropdown-toggle.remove-arrow::after {
+    display: none !important;
+}
+
+/* Application cards */
+.card {
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--surface-bg);
+    color: var(--text-primary);
+    vertical-align: middle;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 42px var(--shadow-color);
+}
+
+.btn-primary:hover {
+    transform: none;
+}
