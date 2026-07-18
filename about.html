@@ -46,15 +46,6 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="about-header">
-        <div class="container text-center py-5">
-            <img src="assets/svg/crest.svg" alt="KHK Crest" class="about-crest mb-4">
-            <h1 class="display-4 fw-bold mb-2">About KHK</h1>
-            <h2 class="h3 text-white-50">Our purpose, values, history, home, and alumni</h2>
-        </div>
-    </section>
-
     <main>
         <!-- Our Purpose -->
         <section id="purpose" class="purpose-section py-5">
@@ -64,7 +55,6 @@
                         <img src="assets/img/2025_active_membership.jpg" alt="KHK active members" class="img-fluid rounded-3 shadow-lg">
                     </div>
                     <div class="col-lg-6 ps-lg-5">
-                        <span class="section-kicker">About KHK</span>
                         <h2 class="display-5 fw-bold mt-2 mb-4">Our Purpose</h2>
                         <p class="lead mb-3">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -84,7 +74,6 @@
         <section id="values" class="values-section py-5 bg-light">
             <div class="container">
                 <div class="section-heading text-center mb-5">
-                    <span class="section-kicker text-dark">About KHK</span>
                     <h2 class="display-6 fw-bold mt-2 mb-3">Our Values</h2>
                     <p class="lead mx-auto about-section-lead">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -127,94 +116,141 @@
         <section id="history" class="history-section py-5">
             <div class="container">
                 <div class="section-heading text-center mb-5">
-                    <span class="section-kicker text-dark">About KHK</span>
                     <h2 class="display-6 fw-bold mt-2 mb-3">Our History</h2>
                     <p class="lead mx-auto about-section-lead">
-                        A century of milestones. Use the arrows to move through our chapter's history, year by year.
+                        A century of milestones. Click on a year to read more about our chapter's history.
                     </p>
                 </div>
-                <div class="history-carousel-wrapper">
-                    <div id="historyCarousel" class="carousel slide history-carousel" data-bs-ride="false">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row align-items-center g-4">
-                                    <div class="col-md-5">
-                                        <img src="assets/img/executive_board.jpg" alt="KHK in 1924" class="img-fluid history-image">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="history-year">1924</div>
-                                        <p class="history-text mb-0">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row align-items-center g-4">
-                                    <div class="col-md-5">
-                                        <img src="assets/img/resume_workshop.jpg" alt="KHK in 1945" class="img-fluid history-image">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="history-year">1945</div>
-                                        <p class="history-text mb-0">
-                                            Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row align-items-center g-4">
-                                    <div class="col-md-5">
-                                        <img src="assets/img/org_fair_table.jpg" alt="KHK in 1977" class="img-fluid history-image">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="history-year">1977</div>
-                                        <p class="history-text mb-0">
-                                            Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row align-items-center g-4">
-                                    <div class="col-md-5">
-                                        <img src="assets/img/spring_2025_casino_night.jpg" alt="KHK in 2002" class="img-fluid history-image">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="history-year">2002</div>
-                                        <p class="history-text mb-0">
-                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                            doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row align-items-center g-4">
-                                    <div class="col-md-5">
-                                        <img src="assets/img/spring_2026_pledge_class.jpg" alt="KHK in 2024" class="img-fluid history-image">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="history-year">2024</div>
-                                        <p class="history-text mb-0">
-                                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                            sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                                        </p>
+                <div class="history-timeline">
+                    <div class="timeline-entry">
+                        <div class="timeline-marker-col">
+                            <span class="timeline-dot"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <button class="timeline-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historyYear1924" aria-expanded="false" aria-controls="historyYear1924">
+                                <span class="timeline-summary">1924: The Year of Founding</span>
+                                <i class="fas fa-chevron-down timeline-chevron"></i>
+                            </button>
+                            <div class="collapse" id="historyYear1924">
+                                <div class="timeline-details">
+                                    <div class="row align-items-center g-4">
+                                        <div class="col-md-5">
+                                            <img src="assets/img/executive_board.jpg" alt="KHK in 1924" class="img-fluid history-image">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p class="history-text mb-0">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#historyCarousel" data-bs-slide="prev">
-                            <span class="history-arrow-icon"><i class="fas fa-chevron-left"></i></span>
-                            <span class="visually-hidden">Previous year</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#historyCarousel" data-bs-slide="next">
-                            <span class="history-arrow-icon"><i class="fas fa-chevron-right"></i></span>
-                            <span class="visually-hidden">Next year</span>
-                        </button>
+                    </div>
+                    <div class="timeline-entry">
+                        <div class="timeline-marker-col">
+                            <span class="timeline-dot"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <button class="timeline-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historyYear1945" aria-expanded="false" aria-controls="historyYear1945">
+                                <span class="timeline-summary">1945: Answering the Call</span>
+                                <i class="fas fa-chevron-down timeline-chevron"></i>
+                            </button>
+                            <div class="collapse" id="historyYear1945">
+                                <div class="timeline-details">
+                                    <div class="row align-items-center g-4">
+                                        <div class="col-md-5 order-md-2">
+                                            <img src="assets/img/resume_workshop.jpg" alt="KHK in 1945" class="img-fluid history-image">
+                                        </div>
+                                        <div class="col-md-7 order-md-1">
+                                            <p class="history-text mb-0">
+                                                Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-entry">
+                        <div class="timeline-marker-col">
+                            <span class="timeline-dot"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <button class="timeline-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historyYear1977" aria-expanded="false" aria-controls="historyYear1977">
+                                <span class="timeline-summary">1977: A Chapter Reborn</span>
+                                <i class="fas fa-chevron-down timeline-chevron"></i>
+                            </button>
+                            <div class="collapse" id="historyYear1977">
+                                <div class="timeline-details">
+                                    <div class="row align-items-center g-4">
+                                        <div class="col-md-5">
+                                            <img src="assets/img/org_fair_table.jpg" alt="KHK in 1977" class="img-fluid history-image">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p class="history-text mb-0">
+                                                Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-entry">
+                        <div class="timeline-marker-col">
+                            <span class="timeline-dot"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <button class="timeline-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historyYear2002" aria-expanded="false" aria-controls="historyYear2002">
+                                <span class="timeline-summary">2002: New Traditions</span>
+                                <i class="fas fa-chevron-down timeline-chevron"></i>
+                            </button>
+                            <div class="collapse" id="historyYear2002">
+                                <div class="timeline-details">
+                                    <div class="row align-items-center g-4">
+                                        <div class="col-md-5 order-md-2">
+                                            <img src="assets/img/spring_2025_casino_night.jpg" alt="KHK in 2002" class="img-fluid history-image">
+                                        </div>
+                                        <div class="col-md-7 order-md-1">
+                                            <p class="history-text mb-0">
+                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                                doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-entry">
+                        <div class="timeline-marker-col">
+                            <span class="timeline-dot"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <button class="timeline-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historyYear2024" aria-expanded="false" aria-controls="historyYear2024">
+                                <span class="timeline-summary">2024: A Century of Brotherhood</span>
+                                <i class="fas fa-chevron-down timeline-chevron"></i>
+                            </button>
+                            <div class="collapse" id="historyYear2024">
+                                <div class="timeline-details">
+                                    <div class="row align-items-center g-4">
+                                        <div class="col-md-5">
+                                            <img src="assets/img/spring_2026_pledge_class.jpg" alt="KHK in 2024" class="img-fluid history-image">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p class="history-text mb-0">
+                                                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                                                sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -225,7 +261,6 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <span class="section-kicker text-dark">About KHK</span>
                         <h2 class="display-5 fw-bold mt-2 mb-4">Our Home</h2>
                         <p class="lead mb-3">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -248,7 +283,6 @@
         <section id="alumni-network" class="alumni-network-section py-5">
             <div class="container-fluid px-4 px-lg-5">
                 <div class="section-heading text-center mb-5">
-                    <span class="section-kicker text-dark">About KHK</span>
                     <h2 class="display-6 fw-bold mt-2 mb-3">Our Alumni Network</h2>
                     <p class="lead mx-auto about-section-lead">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Use the arrows to scroll

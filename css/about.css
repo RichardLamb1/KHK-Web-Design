@@ -3,46 +3,8 @@
    ========================================== */
 
 /* ==========================================
-   PAGE HEADER
-   ========================================== */
-
-.about-header {
-    background: linear-gradient(135deg, #4a1f6f 0%, #6b2c8f 100%);
-    color: white;
-    border-bottom: 3px solid #ffc72c;
-}
-
-.about-crest {
-    max-width: 130px;
-    height: auto;
-    animation: fadeIn 0.6s ease-out;
-}
-
-.about-header h1 {
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.about-header h2 {
-    font-weight: 500;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* ==========================================
    SHARED SECTION HEADING
    ========================================== */
-
-.section-kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #ffc72c;
-}
 
 .section-heading h2 {
     color: var(--primary-color);
@@ -140,16 +102,104 @@
 }
 
 /* ==========================================
-   OUR HISTORY CAROUSEL
+   OUR HISTORY TIMELINE
    ========================================== */
 
-.history-carousel-wrapper {
+.history-timeline {
     position: relative;
-    padding: 0 3rem;
+    max-width: 60rem;
+    margin: 0 auto;
 }
 
-.history-carousel .carousel-item {
-    padding: 1rem 0;
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.timeline-entry {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.timeline-entry + .timeline-entry {
+    margin-top: 0.5rem;
+}
+
+.timeline-marker-col {
+    flex: 0 0 auto;
+    width: 1.25rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.6rem;
+}
+
+.timeline-dot {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    border: 3px solid var(--surface-bg);
+    box-shadow: 0 0 0 2px var(--secondary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-bottom: 1rem;
+}
+
+.timeline-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    background: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.1rem 1.5rem;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.timeline-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+.timeline-summary {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    .timeline-summary {
+        color: var(--text-primary);
+    }
+}
+
+.timeline-chevron {
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+    flex: 0 0 auto;
+}
+
+.timeline-toggle:not(.collapsed) .timeline-chevron {
+    transform: rotate(180deg);
+}
+
+.timeline-details {
+    padding: 1.5rem 0.25rem 0.5rem;
 }
 
 .history-image {
@@ -159,66 +209,10 @@
     border-radius: 1.25rem;
 }
 
-.history-year {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
 .history-text {
     color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.05rem;
-}
-
-.history-carousel .carousel-control-prev,
-.history-carousel .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background: var(--surface-bg);
-    box-shadow: 0 10px 25px var(--shadow-color);
-    border: 1px solid var(--border-color);
-    opacity: 1;
-    transition: all 0.3s ease;
-}
-
-.history-carousel .carousel-control-prev {
-    left: 0;
-}
-
-.history-carousel .carousel-control-next {
-    right: 0;
-}
-
-.history-carousel .carousel-control-prev-icon,
-.history-carousel .carousel-control-next-icon {
-    display: none;
-}
-
-.history-arrow-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-}
-
-.history-carousel .carousel-control-prev:hover,
-.history-carousel .carousel-control-next:hover {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
-    border-color: transparent;
-}
-
-.history-carousel .carousel-control-prev:hover .history-arrow-icon,
-.history-carousel .carousel-control-next:hover .history-arrow-icon {
-    color: #fff;
 }
 
 /* ==========================================
@@ -349,27 +343,17 @@
 }
 
 @media (max-width: 767.98px) {
-    .history-carousel-wrapper {
-        padding: 0 2.5rem;
+    .timeline-summary {
+        font-size: 1rem;
     }
 
-    .history-carousel .carousel-control-prev,
-    .history-carousel .carousel-control-next {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .history-year {
-        font-size: 2.25rem;
+    .timeline-toggle {
+        padding: 0.9rem 1.1rem;
     }
 
     .alumni-card {
         width: min(300px, 80vw);
         padding: 1.25rem;
-    }
-
-    .about-header h1 {
-        font-size: 2rem;
     }
 }
 
