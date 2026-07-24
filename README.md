@@ -1,27 +1,40 @@
-# KHK Delta Chapter - HTML Templates
+# [KHK Delta Chapter Website](https://delta.khk.org/)
 
-This repository contains core HTML, CSS, and JavaScript for Kappa Eta Kappa, Delta Chapter at the University of Wisconsin-Madison.
+This repository contains the website source tree for Kappa Eta Kappa, Delta Chapter at the University of Wisconsin-Madison.
 
 ## Overview
 
 This is a modern, responsive website for Kappa Eta Kappa, a co-ed professional fraternity for Electrical Engineering and Computer Science students. Originally designed for use at Delta Chapter, other chapters of KHK are welcome to use this material as well.
 
-## Goals
+## How-To For Future Web Developers
 
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Navigation Bar**: Quick access to all main sections with sticky top positioning
-- **Hero Section**: Eye-catching introduction with the KHK crest
-- **Multiple Sections**:
-  - About Us: Organization overview and mission
-  - Events: Professional and social events highlights
-  - Gallery: Event photos and memories
-  - Rush Information: Guide for prospective members
-  - Members: Statistics and member directory link
-  - Alumni: Information about our alumni network
-  - Newsletter: Email subscription form
-- **Footer**: Complete contact information, social media links, and external links
-- **Interactive Elements**: Smooth scrolling, animations, form validation
+KHK is famously notorious for rebuilding our website. We've gone through quite a few iterations over the years bouncing back and forth between plain old HTML, WordPress, Jekyll, and Hugo. In fact, you can check out past ones on the [Internet Archive Wayback Machine](https://web.archive.org/web/*/https://delta.khk.org/) if you're curious! Our goal is to future-proof our work so there is no need for this anymore.
+
+Common edits can be made through configuration files in `/_config`, `/_data`, and `/_config.yml`. For anything not configurable through these files (images, text, etc.), you'll need to edit the individual HTML, CSS, and JS files (see **Project Structure** below). If you're unfamiliar with HTML, CSS, and JS, AI tools (ChatGPT, Gemini, Claude, GitHub Copilot, etc.) are very useful. Fun fact: much of this site was originally written by AI!
+
+TODO: write this documentation
+
+### Getting Started
+
+### Editing Alumni Cards (/about)
+
+### Editing Rush Events Calendar (/rush)
+
+### Editing Rush FAQs (/rush)
+
+### Editing Testimonials (/rush)
+
+### Editing Active Members (/members)
+
+### Editing Contact Information (entire site)
+Update the footer with actual contact details in `/_config.yml`:
+- Address: 114 N Orchard St, Madison, WI 53715
+- Email: contact@delta.khk.org
+- Phone: +1 (608) 251-7545
+
+### Editing Social Media Links (entire site)
+Update the social media icon links in in `/_config.yml`:
+TODO: yaml structure for this
 
 ## Project Structure
 
@@ -46,8 +59,10 @@ This is a modern, responsive website for Kappa Eta Kappa, a co-ed professional f
 - **HTML5**: Semantic markup structure
 - **CSS3**: Modern styling with animations and gradients
 - **JavaScript**: Interactive features and form handling
-- **Bootstrap 5**: Responsive grid system and components
-- **Font Awesome 6**: Icon library for social media and UI elements
+- [**Bootstrap 5.3**](https://getbootstrap.com/docs/5.3/getting-started/introduction/): Responsive grid system and components
+- [**Font Awesome 6.4**](https://fontawesome.com/): Icon library for social media and UI elements
+- [**Jekyll**](https://jekyllrb.com/): Static site generator for content management
+- [**GitHub Pages**](https://pages.github.com/): Web hosting service provider
 
 ## Key Features Explained
 
@@ -74,75 +89,10 @@ This is a modern, responsive website for Kappa Eta Kappa, a co-ed professional f
 - Keyboard navigation support
 - Focus visible styles for accessibility
 
-## Customization Guide
-
-### Contact Information
-Update the footer with actual contact details in `index.html`:
-- Address: 114 N Orchard St, Madison, WI 53715
-- Email: contact@delta.khk.org
-- Phone: +1 (608) 251-7545
-
-### Social Media Links
-Update the social media icon links in the footer:
-```html
-<a href="YOUR_INSTAGRAM_URL" class="social-icon" title="Instagram">
-    <i class="fab fa-instagram"></i>
-</a>
-```
-
-### Event Photos
-Replace placeholder images in the gallery section:
-- `assets/img/resume_workshop.jpg`
-- `assets/img/executive_board.jpg`
-- `assets/img/spring_2025_casino_night.jpg`
-
-### External Links
-Update placeholder links in `index.html`:
-- Rush Information link
-- Member Directory link
-- Alumni Association link
-- National Organization link
-- University of Wisconsin-Madison link
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance
-
-- Optimized images for web
-- CDN-hosted Bootstrap and Font Awesome
-- Minimal custom CSS and JavaScript
-- Lazy loading for images (built-in with modern browsers)
-
-## Responsive Breakpoints
-
-- **Large (lg)**: 992px and up
-- **Medium (md)**: 768px - 991px
-- **Small (sm)**: 576px - 767px
-- **Extra Small (xs)**: Below 576px
-
-## Roadmap
-
-Short term:
-- Finalize design, HTML layouts, and page content
-- Collaborate with design team for more specific details
-
-Long term:
-- Migration to a static content manager (Jekyll, Hugo, etc)
-- Possible backend integration with login system
-  - Issue each member a login so they can update their composite photo and links
-
 ## License
 
 Website content (C) 2026 Delta of Kappa Eta Kappa. All rights reserved.
 
-Website tools (HTML, CSS, JS) (C) 2026 Richard Lamb. License TBD.
-
 ---
 
-**Last Updated**: 2026
+**Last Updated**: 2026-07-23
