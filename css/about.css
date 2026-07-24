@@ -3,6 +3,43 @@
    ========================================== */
 
 /* ==========================================
+   ABOUT HEADER
+   ========================================== */
+
+.about-hero-section {
+    position: relative;
+    min-height: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../assets/img/spring_2026_pledge_class.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero-overlay {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 1.75rem 3.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.about-hero-overlay h1 {
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 767.98px) {
+    .about-hero-section {
+        min-height: 16rem;
+    }
+
+    .about-hero-overlay {
+        padding: 1.25rem 2rem;
+    }
+}
+
+/* ==========================================
    SHARED SECTION HEADING
    ========================================== */
 
