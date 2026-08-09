@@ -3,6 +3,86 @@
    ========================================== */
 
 /* ==========================================
+   ABOUT HEADER
+   ========================================== */
+
+.about-hero-section {
+    position: relative;
+    min-height: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../assets/img/spring_2026_pledge_class.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero-overlay {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 1.75rem 3.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.about-hero-overlay h1 {
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 767.98px) {
+    .about-hero-section {
+        min-height: 16rem;
+    }
+
+    .about-hero-overlay {
+        padding: 1.25rem 2rem;
+    }
+}
+
+/* ==========================================
+   ABOUT HERO (IMAGE-ONLY BANNER) + INTRO (OVERLAY VARIANT)
+   ========================================== */
+
+.about-hero-image-section {
+    min-height: 22rem;
+    background-image: url('../assets/img/KHK_Culvers_Photo.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-intro-section {
+    background: var(--surface-bg-strong);
+}
+
+.about-intro-section h1 {
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.about-intro-section p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 767.98px) {
+    .about-hero-image-section {
+        min-height: 14rem;
+    }
+}
+
+/* ==========================================
+   VISION + MISSION COMBINED (OVERLAY VARIANT)
+   ========================================== */
+
+.vision-mission-overlay-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/img/Expo_Team_Magazine_Pic.jpeg');
+}
+
+/* ==========================================
    SHARED SECTION HEADING
    ========================================== */
 
@@ -22,37 +102,78 @@
 }
 
 /* ==========================================
-   OUR PURPOSE / OUR HOME (image + text rows)
+   OUR VISION / OUR MISSION / OUR HOME (image + text rows)
    ========================================== */
 
-.purpose-section img,
+.vision-section img,
+.mission-section img,
 .our-home-section img {
     transition: transform 0.3s ease;
 }
 
-.purpose-section img:hover,
+.vision-section img:hover,
+.mission-section img:hover,
 .our-home-section img:hover {
     transform: scale(1.02);
 }
 
-.purpose-section h2,
+.vision-section h2,
+.mission-section h2,
 .our-home-section h2 {
     color: var(--primary-color);
     font-weight: 800;
 }
 
 @media (prefers-color-scheme: dark) {
-    .purpose-section h2,
+    .vision-section h2,
+    .mission-section h2,
     .our-home-section h2 {
         color: var(--text-primary);
     }
 }
 
-.purpose-section p,
+.vision-section p,
+.mission-section p,
 .our-home-section p {
     color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.05rem;
+}
+
+/* ==========================================
+   OUR VISION / OUR MISSION - BACKGROUND OVERLAY VARIANT
+   ========================================== */
+
+.overlay-feature-section {
+    position: relative;
+    min-height: 26rem;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    padding: 3rem 0;
+}
+
+.overlay-feature-section h2 {
+    color: #fff;
+    font-weight: 800;
+}
+
+.overlay-feature-section p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.overlay-feature-block + .overlay-feature-block {
+    margin-top: 2.5rem;
+}
+
+@media (max-width: 767.98px) {
+    .overlay-feature-section {
+        min-height: 20rem;
+    }
 }
 
 /* ==========================================
@@ -336,7 +457,8 @@
    ========================================== */
 
 @media (max-width: 991.98px) {
-    .purpose-section .ps-lg-5,
+    .vision-section .ps-lg-5,
+    .mission-section .ps-lg-5,
     .our-home-section .ps-lg-5 {
         padding-left: 0 !important;
     }
