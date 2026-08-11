@@ -1,4 +1,4 @@
-# KHK Delta Chapter - HTML Templates
+# KHK Delta Chapter Website
 
 This repository contains core HTML, CSS, and JavaScript for Kappa Eta Kappa, Delta Chapter at the University of Wisconsin-Madison.
 
@@ -92,9 +92,9 @@ Update the social media icon links in the footer:
 
 ### Event Photos
 Replace placeholder images in the gallery section:
-- `assets/img/resume_workshop.jpg`
-- `assets/img/executive_board.jpg`
-- `assets/img/spring_2025_casino_night.jpg`
+- `static/img/resume_workshop.jpg`
+- `static/img/executive_board.jpg`
+- `static/img/spring_2025_casino_night.jpg`
 
 ### External Links
 Update placeholder links in `index.html`:
