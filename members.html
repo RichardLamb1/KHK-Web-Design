@@ -21,6 +21,32 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" href="css/movingWall.css">
+
+    <style>
+        /* Grayscale filter for light mode */
+        @media (prefers-color-scheme: light) {
+            .wall-track img {
+                filter: grayscale(100%) opacity(0.7);
+            }
+        }
+
+        .members-header2 {
+            position: relative;
+        }
+
+        /* Moving wall title styling */
+        .moving-wall-title {
+            z-index: 100;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 40px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -39,7 +65,7 @@
                         <a class="nav-link" href="index.html#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="index.html#about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="rush.html">Rush Information</a>
@@ -48,7 +74,10 @@
                         <a class="nav-link active" href="members.html">Members</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="newspage.html">News</a>
+                        <a class="nav-link" href="index.html#alumni">Alumni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#newsletter">Newsletter</a>
                     </li>
                 </ul>
             </div>
@@ -56,11 +85,19 @@
     </nav>
 
     <!-- Header Section -->
-    <section class="members-header">
-        <div class="container text-center py-5">
-            <img src="assets/svg/crest.svg" alt="KHK Crest" class="members-crest mb-4">
-            <h1 class="display-4 fw-bold mb-2">Kappa Eta Kappa</h1>
-            <h2 class="h3 text-muted">Spring 2026 Membership</h2>
+    <section class="members-header2">
+        <div class="wall-container my-5">
+            <div class="wall-track">
+                <!-- JavaScript will populate these with the moving wall images -->
+            </div>
+            <div class="wall-track"></div>
+            <div class="wall-track"></div>
+            <div class="wall-track"></div>
+        </div>
+        <script src="js/movingWall.js"></script>
+        <div class="text-center moving-wall-title">
+            <h1 class="display-4 fw-bold text-white">Meet Our Members</h1>
+            <p class="lead text-white">The talented individuals who make up the Delta Chapter of Kappa Eta Kappa.</p>
         </div>
     </section>
 

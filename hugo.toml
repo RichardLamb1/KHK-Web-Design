@@ -1,3 +1,8 @@
 baseURL = 'https://delta.khk.org/'
 locale = 'en-us'
+
+# The title of the window
 title = 'Kappa Eta Kappa | Delta Chapter | UW-Madison'
+
+# The title to be shown in the navigation bar at the top of the screen
+navtitle = 'KHK Delta Chapter'
