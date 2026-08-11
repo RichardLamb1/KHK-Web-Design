@@ -1,0 +1,3 @@
+baseURL = 'https://delta.khk.org/'
+locale = 'en-us'
+title = 'KHK Delta Chapter Website'
