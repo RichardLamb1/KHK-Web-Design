@@ -169,12 +169,37 @@
                     card.setAttribute("aria-pressed", shouldFlip ? "true" : "false");
                 });
                 flipAllBtn.innerHTML = shouldFlip
-                    ? '<i class="fas fa-clone me-2"></i>Reset Cards'
-                    : '<i class="fas fa-clone me-2"></i>Flip All Cards';
+                    ? '<i class="fas fa-clone me-2"></i><span>Reset</span>'
+                    : '<i class="fas fa-clone me-2"></i><span>Flip All</span>';
                 flipAllBtn.setAttribute("aria-pressed", shouldFlip ? "true" : "false");
             });
         }
     }
 
-    document.addEventListener("DOMContentLoaded", render);
+    // ---- Floating "Flip All" button: only shown once the Executive
+    // Board section (and beyond) is reached, hidden while still up in
+    // the header/hero area. ----
+
+    function initFlipAllVisibility() {
+        const btn = document.getElementById("flipAllMembersBtn");
+        const header = document.querySelector(".members-header");
+        if (!btn || !header) return;
+
+        if (!("IntersectionObserver" in window)) {
+            // No IntersectionObserver support — fail open, keep it visible.
+            btn.classList.add("is-visible");
+            return;
+        }
+
+        const observer = new IntersectionObserver(function (entries) {
+            const headerVisible = entries[0].isIntersecting;
+            btn.classList.toggle("is-visible", !headerVisible);
+        });
+        observer.observe(header);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        render();
+        initFlipAllVisibility();
+    });
 })();

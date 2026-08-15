@@ -27,6 +27,49 @@
     margin: -0.5rem 0 0;
 }
 
+/* Floating "Flip All" button — fixed to the side of the viewport so it
+   stays put while the page scrolls, instead of living in the normal
+   document flow like members.html's version. Reuses .flip-all-members-btn
+   from members.css for the pill shape/gold gradient/base hover effect;
+   this just repositions it and adjusts the hover transform so centering
+   isn't lost on hover. */
+.flip-all-floating {
+    position: fixed;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 1040;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    /* Hidden until js/members-engine.js adds .is-visible, once the
+       Executive Board section (and beyond) is reached. */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.flip-all-floating.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.flip-all-floating:hover {
+    transform: translateY(-50%) scale(1.06);
+}
+
+@media (max-width: 767.98px) {
+    .flip-all-floating {
+        right: 1rem;
+        padding: 0.7rem 1.1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .flip-all-floating span {
+        display: none;
+    }
+}
+
 /* Hover-reveal overlay for the casual (back) face's Instagram/Snapchat
    icons — mirrors .member-overlay's existing opacity transition, but
    circular to match .member-back-image. */

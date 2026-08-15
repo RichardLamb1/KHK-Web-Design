@@ -28,6 +28,11 @@
     <div id="site-navbar"></div>
     <script src="js/navbar.js"></script>
 
+    <!-- Flip All Button: fixed to the side, stays on screen while scrolling -->
+    <button type="button" class="btn btn-warning flip-all-members-btn flip-all-floating" id="flipAllMembersBtn" title="Flip every card">
+        <i class="fas fa-clone me-2"></i><span>Flip All</span>
+    </button>
+
     <!-- Header Section -->
     <section class="members-header">
         <div class="container text-center py-5">
@@ -60,16 +65,6 @@
             <div class="members-grid" id="membersGrid">
                 <!-- Filled in by js/members-engine.js from js/members-data.js -->
             </div>
-        </div>
-    </section>
-
-    <!-- Flip All Button -->
-    <section class="members-actions py-4">
-        <div class="container text-center">
-            <button type="button" class="btn btn-warning btn-lg flip-all-members-btn" id="flipAllMembersBtn">
-                <i class="fas fa-clone me-2"></i>Flip All Cards
-            </button>
-            <p class="small text-muted mt-3 mb-0">Click any card to flip it, or use the button to flip the whole crew at once.</p>
         </div>
     </section>
 
