@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All News - KHK | Kappa Eta Kappa | Delta Chapter</title>
+    <title>Members (Preview) - KHK | Kappa Eta Kappa | Delta Chapter</title>
 
     <script>
         (function () {
@@ -20,36 +20,73 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" href="css/movingWall.css">
+    <link rel="stylesheet" href="css/members-templated.css">
 </head>
 <body>
     <!-- Navigation Bar (see js/navbar.js) -->
     <div id="site-navbar"></div>
     <script src="js/navbar.js"></script>
 
-    <main>
-        <div class="container">
-            <section class="news-hero">
-                <a href="newspage.html" class="back-to-news-link"><i class="fas fa-arrow-left me-1"></i>Back to News</a>
-                <h1 class="display-5 fw-bold mb-3">All News &amp; Updates</h1>
-                <p class="lead mb-4">Every post from Kappa Eta Kappa, Delta Chapter, newest first.</p>
-            </section>
+    <!-- Flip All Button: fixed to the side, stays on screen while scrolling -->
+    <button type="button" class="btn btn-warning flip-all-members-btn flip-all-floating" id="flipAllMembersBtn" title="Flip every card">
+        <i class="fas fa-clone me-2"></i><span>Flip All</span>
+    </button>
 
-            <p id="newsLoading" class="news-loading">Loading posts&hellip;</p>
-            <p id="newsEmpty" class="news-empty d-none">No posts yet &mdash; check back soon!</p>
-
-            <section id="newsContent" class="d-none pb-5">
-                <div id="allPostsList" class="all-posts-list"></div>
-            </section>
+    <!-- Header Section: animated employer/member-logo wall, brought over from members2.html -->
+    <section class="members-header2">
+        <div class="wall-container my-5">
+            <div class="wall-track">
+                <!-- JavaScript will populate these with the moving wall images -->
+            </div>
+            <div class="wall-track"></div>
+            <div class="wall-track"></div>
+            <div class="wall-track"></div>
         </div>
-    </main>
+        <script src="js/movingWall.js"></script>
+        <div class="text-center moving-wall-title">
+            <h1 class="display-4 fw-bold text-white">Meet Our Members</h1>
+            <p class="lead text-white">The talented individuals who make up the Delta Chapter of Kappa Eta Kappa.</p>
+        </div>
+    </section>
+
+    <!-- Executive Board Section (built from js/members-data.js) -->
+    <section class="executive-board-section py-5">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-kicker text-dark">Leadership</span>
+                <h2 class="display-6 fw-bold mt-2 mb-3">Executive Board</h2>
+                <p class="lead mx-auto executive-board-lead">
+                    The members guiding the chapter through the Spring 2026 semester.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center executive-board-grid" id="executiveBoardGrid">
+                <!-- Filled in by js/members-engine.js from js/members-data.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Grid (built from js/members-data.js) -->
+    <section class="members-section">
+        <hr class="mx-auto mb-5" style="width: 100px; border-top: 3px solid #343a40;">
+        <div class="container py-5">
+            <h2 class="display-6 fw-bold text-center mb-5">Actives</h2>
+            <div class="members-grid" id="membersGrid">
+                <!-- Filled in by js/members-engine.js from js/members-data.js -->
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-5">
         <div class="container-fluid">
             <div class="row mb-5">
+                <!-- Contact Info -->
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="fw-bold mb-4"><i class="fas fa-map-marker-alt me-2"></i>Contact Information</h5>
+                    <h5 class="fw-bold mb-4">
+                        <i class="fas fa-map-marker-alt me-2"></i>Contact Information
+                    </h5>
                     <p class="mb-3">
                         <i class="fas fa-building me-2"></i>
                         114 N Orchard St<br>
@@ -103,8 +140,7 @@
 
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    <script src="js/posts-manifest.js"></script>
-    <script src="js/posts-engine.js"></script>
-    <script src="js/all-posts.js"></script>
+    <script src="js/members-data.js"></script>
+    <script src="js/members-engine.js"></script>
 </body>
 </html>
