@@ -15,6 +15,15 @@
     - Want to find/edit a specific exec member quickly? Search this
       file for their title in quotes, e.g. search for "President" or
       "Social Chair", and you'll land right on their entry.
+    - You do NOT need to find the "right" alphabetical spot when
+      adding someone new — paste their entry anywhere, even always
+      at the very bottom of the list. members-templated.html sorts
+      itself by id every time it loads, so the page will always show
+      everyone in the correct order regardless of where they sit in
+      this file. If you'd also like this file's own order tidied up
+      to match (purely for your own convenience reading it), double-
+      click scripts/sort-members-data.bat — entirely optional, and
+      safe to run any time.
 
   THE 8 QUALIFYING EXEC TITLES (exact spelling/capitalization matters):
     "President", "Vice President", "Secretary", "Treasurer",
@@ -24,6 +33,22 @@
   member appears ONLY in the Executive Board section (never also in
   the main grid). Anything else — including null, or some other
   title that isn't in this list — puts them in the regular grid.
+
+  THE `status` FIELD — who's currently shown on the page:
+    "active"   - shows up on the page normally. This is what every
+                 current member should be set to.
+    "alumni"   - graduated / permanently left. Hidden from the page,
+                 but their entry (and photo/links) stays in this file
+                 for the record instead of being deleted.
+    "inactive" - temporarily not active (studying abroad, leave of
+                 absence, etc). Hidden from the page, same as
+                 "alumni" today, just tracked separately in case it's
+                 ever useful to tell the two apart later.
+  Only "active" members are ever shown, in either section. If a
+  member's `status` is ever missing entirely, they're still treated
+  as active (so a forgotten field doesn't make a new member silently
+  invisible) — but that's a mistake worth fixing, and the browser
+  console will flag it with an error if it happens.
 
   HOW TO ADD A NEW MEMBER
     1. Put their professional (composite) photo in
@@ -37,14 +62,29 @@
        position in the file doesn't matter, though keeping it
        alphabetical by last name makes it easier for the next
        person to scan). Fill in every field.
-    4. For any field you don't have real info for yet, use "TBD"
+    4. Set `status: "active"`.
+    5. For any field you don't have real info for yet, use "TBD"
        for text fields, or null for link/photo fields (linkedin,
        resume, instagram, snapchat, casualPhoto). null means "don't
        show this icon" — it will NOT render a dead/broken link.
-    5. Give it a unique `id` (lowercase "last-first"; if that's
+    6. Give it a unique `id` (lowercase "last-first"; if that's
        already taken by someone else in this file, add "-2", "-3",
        etc. — a few names in this file already do this because two
        different real members happen to share a first+last name).
+
+  HOW TO REMOVE A DEPARTING MEMBER
+    Don't delete their entry — just change their `status` to
+    `"alumni"` (graduated/left for good) or `"inactive"` (temporarily
+    not active). That's the whole change; they'll disappear from the
+    page immediately, and everything about them (photo, links, etc.)
+    stays saved in case you need it later or they come back.
+    If they held an exec position, it's also worth clearing
+    `positionHeld` back to `null` at the same time — not required
+    (the status change alone is enough to hide them everywhere), but
+    it keeps the "search this file for a title in quotes" trick from
+    the top of this comment pointing at whoever the role actually
+    belongs to now.
+    To bring someone back, just flip `status` back to `"active"`.
 
   EXAMPLE ENTRY:
   {
@@ -53,6 +93,7 @@
       photo: "assets/img/members/Doe, Jane.jpg",
       pledgeSemester: "Spring 2026",
       positionHeld: null,               // or one of the 8 exact titles above
+      status: "active",                  // "active" / "alumni" / "inactive"
       year: "Sophomore",                 // freshman / sophomore / junior / senior / graduate / post-graduate
       major: "Computer Science",
       internship: "Software Engineering Intern @ Example Corp",
@@ -80,6 +121,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Agrawal, Vidit.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -97,6 +139,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Anasuri, Rachith.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -113,7 +156,8 @@ window.KHK_MEMBERS_DATA = [
         name: "Kat Bauer",
         photo: "assets/img/members/Bauer, Kat.jpg",
         pledgeSemester: "Fall 2023",
-        positionHeld: null,
+        positionHeld: "President",
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -131,6 +175,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Bharadia, Arnav.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -148,6 +193,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Birenbaum, Tanner.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -165,6 +211,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Bowers, Liliana.jpg",
         pledgeSemester: "Fall 2023",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -182,6 +229,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Brophy, Patrick.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -199,6 +247,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Cerro, Olivia.jpg",
         pledgeSemester: "Spring 2026",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -216,6 +265,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Cerro, Olivia.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -233,6 +283,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Chang, Sean.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -250,6 +301,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Chou, Angelina.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -266,7 +318,8 @@ window.KHK_MEMBERS_DATA = [
         name: "Alex Conover",
         photo: "assets/img/members/Conover, Alex.jpg",
         pledgeSemester: "Fall 2023",
-        positionHeld: null,
+        positionHeld: "Vice President",
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -284,6 +337,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Cortese, Michael.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -301,6 +355,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Crowe, James.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -318,6 +373,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Deviley, Kate.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -335,6 +391,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Dhande, Kshitij.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -352,6 +409,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Diener, Andrew.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -369,6 +427,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Erickson, Samuel.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -386,6 +445,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Gupta, Abhimanyu.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -403,6 +463,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Gureno, Zoe.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -420,6 +481,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Iadarola, Vincent.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -436,7 +498,8 @@ window.KHK_MEMBERS_DATA = [
         name: "Raghav Jindal",
         photo: "assets/img/members/Jindal, Raghav.jpg",
         pledgeSemester: "Spring 2026",
-        positionHeld: null,
+        positionHeld: "Academic Chair",
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -454,6 +517,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Jorenby, Parker.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -471,6 +535,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Kapur, Karan.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -488,6 +553,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Kemnitz, Nicole.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -505,6 +571,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Kerai, Dhruv.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -522,6 +589,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Klausner, Jacob.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -539,6 +607,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Klein, Kellen.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -556,6 +625,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Klicker, Ben.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -573,6 +643,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Kuhse, Finn.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -590,6 +661,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Kujava, McKenzie.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -607,6 +679,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Lamb, Richard.jpg",
         pledgeSemester: "Spring 2026",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -624,6 +697,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Lawry, Hunter.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -641,6 +715,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/svg/crest.svg",
         pledgeSemester: "Spring 2026",
         positionHeld: "Publicity Chair",
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -658,6 +733,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Malpani, Rishit.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -675,6 +751,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Mavilla, Jasmy.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -692,6 +769,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Mehrotra, Dev.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -709,6 +787,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Menge, Kristen.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -726,6 +805,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Mettu, Abhay.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -743,6 +823,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Mohammed, Usman.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -760,6 +841,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Novak, Nathan.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -777,6 +859,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/O'Leary, Brendan.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -794,6 +877,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Olson, Scarlett.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -811,6 +895,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Park, Kevin.jpg",
         pledgeSemester: "Spring 2026",
         positionHeld: "Treasurer",
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -828,6 +913,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Patra, Krishnang.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -845,6 +931,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Pietenpol, Lexi.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -862,6 +949,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Race, Ethan.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -879,6 +967,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Richard, Tyler.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -896,6 +985,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Rollins, Jack.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -913,6 +1003,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Sandoval, Daniel.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -930,6 +1021,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Schwarz, Max.jpg",
         pledgeSemester: "Spring 2026",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -947,6 +1039,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Schwarz, Max.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -964,6 +1057,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Skarabot, Eva.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -981,6 +1075,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Tabachnick, Rex.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -998,6 +1093,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Talluri, Neha.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1015,6 +1111,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Tobin, William.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1032,6 +1129,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Upson, Brock.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1049,6 +1147,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Woo, John.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1066,6 +1165,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Ye, Matthew.jpg",
         pledgeSemester: "Spring 2026",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1083,6 +1183,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Young, Ryan.jpg",
         pledgeSemester: "Spring 2026",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1100,6 +1201,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Young, Ryan.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1117,6 +1219,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Zimmerman, Daniel.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1134,6 +1237,7 @@ window.KHK_MEMBERS_DATA = [
         photo: "assets/img/members/Zimmerman, Sheridan.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: null,
+        status: "active",
         year: "TBD",
         major: "TBD",
         internship: "TBD",
@@ -1144,5 +1248,23 @@ window.KHK_MEMBERS_DATA = [
         blurb: "TBD",
         instagram: null,
         snapchat: null
-    }
+    },
+    {
+        id: "agrawal-vidit",
+        name: "Vidit Agrawal",
+        photo: "assets/img/members/Agrawal, Vidit.jpg",
+        pledgeSemester: "Fall 2024",
+        positionHeld: null,
+        status: "active",
+        year: "TBD",
+        major: "TBD",
+        internship: "TBD",
+        linkedin: null,
+        resume: null,
+        casualPhoto: null,
+        studentOrg: "TBD",
+        blurb: "TBD",
+        instagram: null,
+        snapchat: null
+    },
 ];

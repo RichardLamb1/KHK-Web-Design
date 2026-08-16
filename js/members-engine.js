@@ -98,6 +98,10 @@
         );
     }
 
+    // The only statuses that actually mean something to the engine — anything
+    // else (including a missing status) is treated as active, see below.
+    const KNOWN_STATUSES = ["active", "alumni", "inactive"];
+
     function render() {
         const data = Array.isArray(window.KHK_MEMBERS_DATA) ? window.KHK_MEMBERS_DATA : [];
 
@@ -105,12 +109,28 @@
             if (!m.name || !m.photo || !m.pledgeSemester) {
                 console.error("[members] An entry in js/members-data.js is missing a required field (name/photo/pledgeSemester):", m);
             }
+            if (m.status && !KNOWN_STATUSES.includes(m.status)) {
+                console.error('[members] "' + m.name + '" in js/members-data.js has an unrecognized status ("' + m.status + '") — expected "active", "alumni", or "inactive". Treating them as active for now.');
+            }
         });
 
-        const execMembers = data
+        // Only currently-active members are shown anywhere on the page. A
+        // missing status fails open (treated as active) so forgetting to set
+        // it on a new entry doesn't silently make that person invisible —
+        // the console.error above still flags it so it gets noticed.
+        const visibleMembers = data.filter(function (m) { return !m.status || m.status === "active"; });
+
+        const execMembers = visibleMembers
             .filter(function (m) { return EXEC_POSITIONS.includes(m.positionHeld); })
             .sort(function (a, b) { return EXEC_POSITIONS.indexOf(a.positionHeld) - EXEC_POSITIONS.indexOf(b.positionHeld); });
-        const regularMembers = data.filter(function (m) { return !EXEC_POSITIONS.includes(m.positionHeld); });
+
+        // Sorted by id (which is always a "last-first" slug, see
+        // js/members-data.js) rather than relying on file order — so a new
+        // entry can be pasted anywhere in that file (even always at the very
+        // bottom) and still show up in the right alphabetical spot here.
+        const regularMembers = visibleMembers
+            .filter(function (m) { return !EXEC_POSITIONS.includes(m.positionHeld); })
+            .sort(function (a, b) { return a.id.localeCompare(b.id); });
 
         const execContainer = document.getElementById("executiveBoardGrid");
         const gridContainer = document.getElementById("membersGrid");
