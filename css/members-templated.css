@@ -6,6 +6,32 @@
    AFTER css/members.css so these overrides win.
    ========================================== */
 
+/* Header banner — the animated logo wall brought over from
+   members2.html (structure/behavior from css/movingWall.css +
+   js/movingWall.js), plus the bits members2.html defined inline that
+   are specific to using that wall as this page's header. */
+.members-header2 {
+    position: relative;
+}
+
+.moving-wall-title {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+/* Grayscale filter for light mode (movingWall.css already handles dark mode) */
+@media (prefers-color-scheme: light) {
+    .wall-track img {
+        filter: grayscale(100%) opacity(0.7);
+    }
+}
+
 /* New text rows on the professional (front) face */
 .member-year-major,
 .member-internship {

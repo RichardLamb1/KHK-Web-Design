@@ -21,6 +21,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" href="css/movingWall.css">
     <link rel="stylesheet" href="css/members-templated.css">
 </head>
 <body>
@@ -33,12 +34,20 @@
         <i class="fas fa-clone me-2"></i><span>Flip All</span>
     </button>
 
-    <!-- Header Section -->
-    <section class="members-header">
-        <div class="container text-center py-5">
-            <img src="assets/svg/crest.svg" alt="KHK Crest" class="members-crest mb-4">
-            <h1 class="display-4 fw-bold mb-2">Kappa Eta Kappa</h1>
-            <h2 class="h3 text-muted">Spring 2026 Membership</h2>
+    <!-- Header Section: animated employer/member-logo wall, brought over from members2.html -->
+    <section class="members-header2">
+        <div class="wall-container my-5">
+            <div class="wall-track">
+                <!-- JavaScript will populate these with the moving wall images -->
+            </div>
+            <div class="wall-track"></div>
+            <div class="wall-track"></div>
+            <div class="wall-track"></div>
+        </div>
+        <script src="js/movingWall.js"></script>
+        <div class="text-center moving-wall-title">
+            <h1 class="display-4 fw-bold text-white">Meet Our Members</h1>
+            <p class="lead text-white">The talented individuals who make up the Delta Chapter of Kappa Eta Kappa.</p>
         </div>
     </section>
 
@@ -62,6 +71,7 @@
     <section class="members-section">
         <hr class="mx-auto mb-5" style="width: 100px; border-top: 3px solid #343a40;">
         <div class="container py-5">
+            <h2 class="display-6 fw-bold text-center mb-5">Actives</h2>
             <div class="members-grid" id="membersGrid">
                 <!-- Filled in by js/members-engine.js from js/members-data.js -->
             </div>
