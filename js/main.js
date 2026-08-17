@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeColorMode();
     initializeScrollBehavior();
     initializeScrollToTopButton();
-    initializeFormHandling();
     initializeNavigationHighlight();
     initializeIntersectionObserver();
 });
@@ -97,35 +96,9 @@ function initializeScrollToTopButton() {
 }
 
 // ==========================================
-// FORM HANDLING
+// FORM HELPERS
+// (used by js/join-form.js for the "Interested in Joining?" sign-up form)
 // ==========================================
-
-function initializeFormHandling() {
-    const newsletterForm = document.getElementById('newsletterForm');
-    
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value;
-            
-            // Basic email validation
-            if (isValidEmail(email)) {
-                // Show success message
-                showNotification('Thank you for subscribing!', 'success');
-                
-                // Reset form
-                this.reset();
-                
-                // Here you would typically send the email to your backend
-                console.log('Newsletter subscription:', email);
-            } else {
-                showNotification('Please enter a valid email address.', 'error');
-            }
-        });
-    }
-}
 
 // Email validation helper
 function isValidEmail(email) {

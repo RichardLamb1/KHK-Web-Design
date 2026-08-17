@@ -5,7 +5,9 @@ This folder holds the "casual side" photo for each member's flip card on
 the professional/composite photos.
 
 **Naming convention**: same as `assets/img/members/` — `Last, First.jpg`
-(comma-space), e.g. `Doe, Jane.jpg`.
+(comma-space), e.g. `Doe, Jane.jpg`. `.jpeg` works too — just use whichever
+extension the photo file actually has, and make sure `casualPhoto` in
+`members-data.js` matches it exactly.
 
 **To add one**: drop the photo in here, then set that member's `casualPhoto`
 field in [`../../../js/members-data.js`](../../../js/members-data.js) to

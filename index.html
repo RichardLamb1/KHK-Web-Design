@@ -21,6 +21,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/join-form.css">
     <style>
         .hero-section {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%), url('assets/img/2025_active_membership.jpg') center/cover no-repeat;
@@ -28,40 +29,9 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#home">
-                <img src="assets/svg/logo.svg" alt="KHK Logo" class="navbar-logo">
-                <span class="ms-2">KHK Delta Chapter</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="rush.html">Rush Information</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="members.html">Members</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#alumni">Alumni</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#newsletter">Newsletter</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Bar (see js/navbar.js) -->
+    <div id="site-navbar"></div>
+    <script src="js/navbar.js"></script>
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
@@ -79,7 +49,7 @@
                         </p>
                         <div class="hero-buttons">
                             <a href="rush.html" class="btn btn-primary btn-lg me-3">Learn About Rush</a>
-                            <a href="#about" class="btn btn-outline-light btn-lg">Explore Our Story</a>
+                            <a href="about.html" class="btn btn-outline-light btn-lg">Explore Our Story</a>
                         </div>
                     </div>
                 </div>
@@ -114,7 +84,7 @@
                         Our Delta Chapter at UW-Madison is proud to serve the campus community through 
                         professional development, social engagement, and lifelong friendships.
                     </p>
-                    <a href="#" class="btn btn-primary btn-lg">Our Story</a>
+                    <a href="about.html" class="btn btn-primary btn-lg">Our Story</a>
                 </div>
             </div>
         </div>
@@ -144,14 +114,14 @@
                 <div class="carousel-item">
                     <img src="assets/img/executive_board.jpg" alt="Executive Board" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(0.7);">
                     <div class="carousel-caption text-start d-none d-md-block">
-                        <h5 class="h2">Executive Board</h5>
-                        <p>Leadership Opportunities, Decision Making, Strategic Planning</p>
+                        <h5 class="h2">Academic Support</h5>
+                        <p>Study Nights, Resource Provision, Office Hours</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="assets/img/spring_2025_casino_night.jpg" alt="Casino Night" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(0.7);">
                     <div class="carousel-caption text-start d-none d-md-block">
-                        <h5 class="h2">Social Events</h5>
+                        <h5 class="h2">Building Brotherhood</h5>
                         <p>Entertainment, Socializing, Fundraising</p>
                     </div>
                 </div>
@@ -202,7 +172,7 @@
                 </div>
             </div>
             <div class="text-center mt-5 pt-4">
-                <a href="members.html" class="btn btn-primary btn-lg">View Member Directory</a>
+                <a href="members-templated.html" class="btn btn-primary btn-lg">View Member Directory</a>
             </div>
         </div>
     </section>
@@ -261,33 +231,14 @@
                 </div>
             </div>
             <div class="text-center pt-4">
-                <a href="#" class="btn btn-primary btn-lg">Visit Delta Alumni Association</a>
+                <a href="https://daa.khk.org/" class="btn btn-primary btn-lg">Visit Delta Alumni Association</a>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section id="newsletter" class="newsletter-section py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="display-5 fw-bold text-center mb-4">Stay Connected</h2>
-                    <p class="lead text-center mb-5">
-                        Subscribe to our newsletter to stay updated on events, news, and opportunities.
-                    </p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <div class="input-group input-group-lg mb-3">
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                        <p class="text-muted text-center small">
-                            We respect your privacy. Unsubscribe at any time.
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Interested in Joining? Sign-up Form (see js/join-form.js) -->
+    <div id="join-form"></div>
+    <script src="js/join-form.js"></script>
 
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-5">

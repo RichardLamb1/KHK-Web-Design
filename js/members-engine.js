@@ -70,20 +70,28 @@
         );
     }
 
-    function backFaceHtml(member) {
+    // Deliberately structured as a replica of frontFaceHtml() above — same
+    // .member-image-wrapper/.member-overlay/.member-info/.member-name
+    // classes, same up-to-4-line info block shape — just with the casual
+    // content (casual photo, org, blurb, pledge semester) and Instagram/
+    // Snapchat instead of LinkedIn/resume. See css/members-templated.css
+    // for the matching reset of members.css's old circular "badge" look.
+    function backFaceHtml(member, isExec) {
         const links = iconLink(member.instagram, "fab fa-instagram", "Instagram") +
                       iconLink(member.snapchat, "fab fa-snapchat", "Snapchat");
         const casualPhoto = member.casualPhoto || CASUAL_PHOTO_FALLBACK;
 
         return (
-            '<div class="member-back-image-wrapper">' +
-                '<img src="' + escapeHtml(casualPhoto) + '" alt="' + escapeHtml(member.name) + ' (casual photo)" class="member-back-image">' +
-                (links ? '<div class="member-back-overlay"><div class="member-social">' + links + "</div></div>" : "") +
+            '<div class="member-image-wrapper">' +
+                '<img src="' + escapeHtml(casualPhoto) + '" alt="' + escapeHtml(member.name) + ' (casual photo)" class="member-image">' +
+                (links ? '<div class="member-overlay"><div class="member-social">' + links + "</div></div>" : "") +
             "</div>" +
-            '<h3 class="member-back-title">' + escapeHtml(member.name) + "</h3>" +
-            '<p class="member-back-org">' + escapeHtml(member.studentOrg) + "</p>" +
-            '<p class="member-back-blurb">' + escapeHtml(member.blurb) + "</p>" +
-            '<p class="member-back-meta">Pledged ' + escapeHtml(member.pledgeSemester) + "</p>"
+            '<div class="member-info' + (isExec ? " text-center" : "") + '">' +
+                '<h3 class="member-name">' + escapeHtml(member.name) + "</h3>" +
+                '<p class="member-org">' + escapeHtml(member.studentOrg) + "</p>" +
+                '<p class="member-blurb">' + escapeHtml(member.blurb) + "</p>" +
+                '<p class="member-pledge-meta">Pledged ' + escapeHtml(member.pledgeSemester) + "</p>" +
+            "</div>"
         );
     }
 
@@ -92,11 +100,15 @@
             '<div class="member-card' + (isExec ? " executive-board-card h-100" : "") + '" data-member-id="' + escapeHtml(member.id) + '">' +
                 '<div class="member-card-inner">' +
                     '<div class="member-card-face member-card-front">' + frontFaceHtml(member) + "</div>" +
-                    '<div class="member-card-face member-card-back" aria-hidden="true">' + backFaceHtml(member) + "</div>" +
+                    '<div class="member-card-face member-card-back" aria-hidden="true">' + backFaceHtml(member, isExec) + "</div>" +
                 "</div>" +
             "</div>"
         );
     }
+
+    // The only statuses that actually mean something to the engine — anything
+    // else (including a missing status) is treated as active, see below.
+    const KNOWN_STATUSES = ["active", "alumni", "inactive"];
 
     function render() {
         const data = Array.isArray(window.KHK_MEMBERS_DATA) ? window.KHK_MEMBERS_DATA : [];
@@ -105,12 +117,28 @@
             if (!m.name || !m.photo || !m.pledgeSemester) {
                 console.error("[members] An entry in js/members-data.js is missing a required field (name/photo/pledgeSemester):", m);
             }
+            if (m.status && !KNOWN_STATUSES.includes(m.status)) {
+                console.error('[members] "' + m.name + '" in js/members-data.js has an unrecognized status ("' + m.status + '") — expected "active", "alumni", or "inactive". Treating them as active for now.');
+            }
         });
 
-        const execMembers = data
+        // Only currently-active members are shown anywhere on the page. A
+        // missing status fails open (treated as active) so forgetting to set
+        // it on a new entry doesn't silently make that person invisible —
+        // the console.error above still flags it so it gets noticed.
+        const visibleMembers = data.filter(function (m) { return !m.status || m.status === "active"; });
+
+        const execMembers = visibleMembers
             .filter(function (m) { return EXEC_POSITIONS.includes(m.positionHeld); })
             .sort(function (a, b) { return EXEC_POSITIONS.indexOf(a.positionHeld) - EXEC_POSITIONS.indexOf(b.positionHeld); });
-        const regularMembers = data.filter(function (m) { return !EXEC_POSITIONS.includes(m.positionHeld); });
+
+        // Sorted by id (which is always a "last-first" slug, see
+        // js/members-data.js) rather than relying on file order — so a new
+        // entry can be pasted anywhere in that file (even always at the very
+        // bottom) and still show up in the right alphabetical spot here.
+        const regularMembers = visibleMembers
+            .filter(function (m) { return !EXEC_POSITIONS.includes(m.positionHeld); })
+            .sort(function (a, b) { return a.id.localeCompare(b.id); });
 
         const execContainer = document.getElementById("executiveBoardGrid");
         const gridContainer = document.getElementById("membersGrid");

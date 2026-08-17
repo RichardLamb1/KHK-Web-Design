@@ -21,6 +21,7 @@
     <!-- Shared CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/rush.css">
+    <link rel="stylesheet" href="css/join-form.css">
 
     <style>
         .rush-hero {
@@ -32,27 +33,9 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/svg/logo.svg" alt="KHK Logo" class="navbar-logo">
-                <span class="ms-2">KHK Delta Chapter</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="rush.html">Rush Information</a></li>
-                    <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#alumni">Alumni</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#newsletter">Newsletter</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Bar (see js/navbar.js) -->
+    <div id="site-navbar"></div>
+    <script src="js/navbar.js"></script>
 
     <header class="rush-hero">
         <div class="container py-5 py-lg-6">
@@ -418,31 +401,9 @@
             </div>
         </section>
 
-        <!-- Interest Form -->
-        <section id="interest-section" class="interest-section py-5 bg-light">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="display-5 fw-bold text-center mb-4">Interested in Joining?</h2>
-                        <p class="lead text-center mb-5">
-                            Leave your name and email below to receive updates about rush events, deadlines, and other important information. We look forward to meeting you!
-                        </p>
-                        <form class="interest-form" id="interestForm">
-                            <div class="input-group input-group-lg mb-3">
-                                <input type="text" class="form-control" placeholder="Enter your name" required>
-                            </div>
-                            <div class="input-group input-group-lg mb-3">
-                                <input type="email" class="form-control" placeholder="Enter your email" required>
-                                <button class="btn btn-primary" type="submit">Subscribe</button>
-                            </div>
-                            <p class="text-muted text-center small">
-                                We respect your privacy. Unsubscribe at any time.
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Interested in Joining? Sign-up Form (see js/join-form.js) -->
+        <div id="join-form"></div>
+        <script src="js/join-form.js"></script>
     </main>
 
     <footer class="footer bg-dark text-white py-5">
