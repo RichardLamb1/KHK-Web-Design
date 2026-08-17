@@ -70,20 +70,28 @@
         );
     }
 
-    function backFaceHtml(member) {
+    // Deliberately structured as a replica of frontFaceHtml() above — same
+    // .member-image-wrapper/.member-overlay/.member-info/.member-name
+    // classes, same up-to-4-line info block shape — just with the casual
+    // content (casual photo, org, blurb, pledge semester) and Instagram/
+    // Snapchat instead of LinkedIn/resume. See css/members-templated.css
+    // for the matching reset of members.css's old circular "badge" look.
+    function backFaceHtml(member, isExec) {
         const links = iconLink(member.instagram, "fab fa-instagram", "Instagram") +
                       iconLink(member.snapchat, "fab fa-snapchat", "Snapchat");
         const casualPhoto = member.casualPhoto || CASUAL_PHOTO_FALLBACK;
 
         return (
-            '<div class="member-back-image-wrapper">' +
-                '<img src="' + escapeHtml(casualPhoto) + '" alt="' + escapeHtml(member.name) + ' (casual photo)" class="member-back-image">' +
-                (links ? '<div class="member-back-overlay"><div class="member-social">' + links + "</div></div>" : "") +
+            '<div class="member-image-wrapper">' +
+                '<img src="' + escapeHtml(casualPhoto) + '" alt="' + escapeHtml(member.name) + ' (casual photo)" class="member-image">' +
+                (links ? '<div class="member-overlay"><div class="member-social">' + links + "</div></div>" : "") +
             "</div>" +
-            '<h3 class="member-back-title">' + escapeHtml(member.name) + "</h3>" +
-            '<p class="member-back-org">' + escapeHtml(member.studentOrg) + "</p>" +
-            '<p class="member-back-blurb">' + escapeHtml(member.blurb) + "</p>" +
-            '<p class="member-back-meta">Pledged ' + escapeHtml(member.pledgeSemester) + "</p>"
+            '<div class="member-info' + (isExec ? " text-center" : "") + '">' +
+                '<h3 class="member-name">' + escapeHtml(member.name) + "</h3>" +
+                '<p class="member-org">' + escapeHtml(member.studentOrg) + "</p>" +
+                '<p class="member-blurb">' + escapeHtml(member.blurb) + "</p>" +
+                '<p class="member-pledge-meta">Pledged ' + escapeHtml(member.pledgeSemester) + "</p>" +
+            "</div>"
         );
     }
 
@@ -92,7 +100,7 @@
             '<div class="member-card' + (isExec ? " executive-board-card h-100" : "") + '" data-member-id="' + escapeHtml(member.id) + '">' +
                 '<div class="member-card-inner">' +
                     '<div class="member-card-face member-card-front">' + frontFaceHtml(member) + "</div>" +
-                    '<div class="member-card-face member-card-back" aria-hidden="true">' + backFaceHtml(member) + "</div>" +
+                    '<div class="member-card-face member-card-back" aria-hidden="true">' + backFaceHtml(member, isExec) + "</div>" +
                 "</div>" +
             "</div>"
         );

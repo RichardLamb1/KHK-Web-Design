@@ -698,7 +698,7 @@ window.KHK_MEMBERS_DATA = [
     {
         id: "leitz-katie",
         name: "Katie Leitz",
-        photo: "assets/svg/crest.svg",
+        photo: "assets/img/members/Leitz, Katie.jpg",
         pledgeSemester: "Fall 2025",
         positionHeld: "Publicity Chair",
         status: "active",
@@ -1220,7 +1220,7 @@ window.KHK_MEMBERS_DATA = [
     {
         id: "popuri-praneet",
         name: "Praneet Popuri",
-        photo: "assets/svg/crest.svg",
+        photo: "assets/img/members/Popuri, Praneet.jpg",
         pledgeSemester: "Spring 2024",
         positionHeld: "Social Chair",
         status: "active",
@@ -1274,7 +1274,7 @@ window.KHK_MEMBERS_DATA = [
     {
         id: "huhn-will",
         name: "Will Huhn",
-        photo: "assets/svg/crest.svg",
+        photo: "assets/img/members/Huhn, Will.jpg",
         pledgeSemester: "Fall 2024",
         positionHeld: null,
         status: "active",
@@ -1328,7 +1328,7 @@ window.KHK_MEMBERS_DATA = [
     {
         id: "desilver-james",
         name: "James DeSilver",
-        photo: "assets/svg/crest.svg",
+        photo: "assets/img/members/Desilver, James.jpeg",
         pledgeSemester: "Fall 2025",
         positionHeld: "Secretary",
         status: "active",
@@ -1346,7 +1346,7 @@ window.KHK_MEMBERS_DATA = [
     {
         id: "tseng-kevin",
         name: "Kevin Tseng",
-        photo: "assets/svg/crest.svg",
+        photo: "assets/img/members/Tseng, Kevin.jpeg",
         pledgeSemester: "Fall 2025",
         positionHeld: null,
         status: "active",
@@ -1364,7 +1364,7 @@ window.KHK_MEMBERS_DATA = [
     {
         id: "zhang-kevin",
         name: "Kevin Zhang",
-        photo: "assets/svg/crest.svg",
+        photo: "assets/img/members/Zhang, Kevin.jpeg",
         pledgeSemester: "Fall 2025",
         positionHeld: null,
         status: "active",
@@ -1382,7 +1382,7 @@ window.KHK_MEMBERS_DATA = [
     {
         id: "conover-logan",
         name: "Logan Conover",
-        photo: "assets/svg/crest.svg",
+        photo: "assets/img/members/Conover, Logan.jpg",
         pledgeSemester: "Fall 2025",
         positionHeld: null,
         status: "active",
@@ -1400,7 +1400,7 @@ window.KHK_MEMBERS_DATA = [
     {
         id: "jordan-luke",
         name: "Luke Jordan",
-        photo: "assets/svg/crest.svg",
+        photo: null,
         pledgeSemester: "Fall 2025",
         positionHeld: null,
         status: "active",
@@ -1409,7 +1409,7 @@ window.KHK_MEMBERS_DATA = [
         internship: "TBD",
         linkedin: null,
         resume: null,
-        casualPhoto: null,
+        casualPhoto: "assets/img/members-casual/Jordan, Luke.JPG",
         studentOrg: "TBD",
         blurb: "TBD",
         instagram: null,
