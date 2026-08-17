@@ -46,9 +46,9 @@
     const NAV_LINKS = [
         { label: "Home", file: "index.html", anchor: "home" },
         { label: "About Us", file: "about.html" },
+        { label: "Our Home", file: "our-home.html" },
         { label: "Rush Information", file: "rush.html" },
-        { label: "Members", file: "members.html" },
-        { label: "Members (Preview)", file: "members-templated.html" },
+        { label: "Members", file: "members-templated.html" },
         { label: "News", file: "newspage.html", aliases: ["all-posts.html", "post.html"] }
     ];
 
