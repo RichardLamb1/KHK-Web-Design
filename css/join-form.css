@@ -1,0 +1,60 @@
+/* ==========================================
+   "INTERESTED IN JOINING?" SIGN-UP FORM
+   Shared by index.html and rush.html (built by js/join-form.js).
+   Reuses the same design tokens/treatment as the site's other forms
+   and primary buttons (see css/style.css's .btn-primary and the old
+   .newsletter-form/.interest-form rules this replaces).
+   ========================================== */
+
+.join-form-section {
+    background: var(--surface-bg-alt);
+}
+
+.join-form-section h2 {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+@media (prefers-color-scheme: dark) {
+    .join-form-section h2 {
+        color: var(--text-primary);
+    }
+}
+
+.join-form .form-control,
+.join-form .form-select {
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background: var(--surface-bg);
+    color: var(--text-primary);
+}
+
+.join-form .form-control:focus,
+.join-form .form-select:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+    background: var(--surface-bg);
+    color: var(--text-primary);
+}
+
+.join-form button[type="submit"] {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #a01829 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 2.75rem;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.join-form button[type="submit"]:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+}
+
+.join-form button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

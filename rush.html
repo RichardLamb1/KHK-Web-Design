@@ -21,6 +21,7 @@
     <!-- Shared CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/rush.css">
+    <link rel="stylesheet" href="css/join-form.css">
 
     <style>
         .rush-hero {
@@ -400,31 +401,9 @@
             </div>
         </section>
 
-        <!-- Interest Form -->
-        <section id="interest-section" class="interest-section py-5 bg-light">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="display-5 fw-bold text-center mb-4">Interested in Joining?</h2>
-                        <p class="lead text-center mb-5">
-                            Leave your name and email below to receive updates about rush events, deadlines, and other important information. We look forward to meeting you!
-                        </p>
-                        <form class="interest-form" id="interestForm">
-                            <div class="input-group input-group-lg mb-3">
-                                <input type="text" class="form-control" placeholder="Enter your name" required>
-                            </div>
-                            <div class="input-group input-group-lg mb-3">
-                                <input type="email" class="form-control" placeholder="Enter your email" required>
-                                <button class="btn btn-primary" type="submit">Subscribe</button>
-                            </div>
-                            <p class="text-muted text-center small">
-                                We respect your privacy. Unsubscribe at any time.
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Interested in Joining? Sign-up Form (see js/join-form.js) -->
+        <div id="join-form"></div>
+        <script src="js/join-form.js"></script>
     </main>
 
     <footer class="footer bg-dark text-white py-5">

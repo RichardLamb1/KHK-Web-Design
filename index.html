@@ -21,6 +21,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/join-form.css">
     <style>
         .hero-section {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%), url('assets/img/2025_active_membership.jpg') center/cover no-repeat;
@@ -230,33 +231,14 @@
                 </div>
             </div>
             <div class="text-center pt-4">
-                <a href="#" class="btn btn-primary btn-lg">Visit Delta Alumni Association</a>
+                <a href="https://daa.khk.org/" class="btn btn-primary btn-lg">Visit Delta Alumni Association</a>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section id="newsletter" class="newsletter-section py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="display-5 fw-bold text-center mb-4">Stay Connected</h2>
-                    <p class="lead text-center mb-5">
-                        Subscribe to our newsletter to stay updated on events, news, and opportunities.
-                    </p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <div class="input-group input-group-lg mb-3">
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                        <p class="text-muted text-center small">
-                            We respect your privacy. Unsubscribe at any time.
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Interested in Joining? Sign-up Form (see js/join-form.js) -->
+    <div id="join-form"></div>
+    <script src="js/join-form.js"></script>
 
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-5">
