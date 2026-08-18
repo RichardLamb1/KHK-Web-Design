@@ -1,4 +1,4 @@
-# KHK Delta Chapter - HTML Templates
+# KHK Delta Chapter Website
 
 This repository contains core HTML, CSS, and JavaScript for Kappa Eta Kappa, Delta Chapter at the University of Wisconsin-Madison.
 
