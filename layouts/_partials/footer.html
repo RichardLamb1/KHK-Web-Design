@@ -1,7 +1,12 @@
-<!-- Footer -->
+{{/*
+  Shared footer, Hugo-native replacement for js/footer.js.
+  Contact info / social links / quick links live in hugo.toml's
+  [params] block, not hardcoded here — that's the one place to edit
+  them going forward.
+*/}}
 <footer class="footer bg-dark text-white py-5">
     <div class="container-fluid">
-        <div class="row mb-5 mx-5">
+        <div class="row mb-5">
             <!-- Contact Info -->
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                 <h5 class="fw-bold mb-4">
@@ -9,16 +14,16 @@
                 </h5>
                 <p class="mb-3">
                     <i class="fas fa-building me-2"></i>
-                    114 N Orchard St<br>
-                    <span class="ms-4">Madison, WI 53715</span>
+                    {{ .Site.Params.addressLine1 }}<br>
+                    <span class="ms-4">{{ .Site.Params.addressLine2 }}</span>
                 </p>
                 <p class="mb-3">
                     <i class="fas fa-envelope me-2"></i>
-                    <a href="mailto:contact@delta.khk.org" class="text-white-50">contact@delta.khk.org</a>
+                    <a href="mailto:{{ .Site.Params.email }}" class="text-white-50">{{ .Site.Params.email }}</a>
                 </p>
                 <p>
                     <i class="fas fa-phone me-2"></i>
-                    <a href="tel:+16082517545" class="text-white-50">+1 (608) 251-7545</a>
+                    <a href="{{ .Site.Params.phoneHref | safeURL }}" class="text-white-50">{{ .Site.Params.phoneDisplay }}</a>
                 </p>
             </div>
 
@@ -26,13 +31,13 @@
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                 <h5 class="fw-bold mb-4">Follow Us</h5>
                 <div class="social-links mb-4">
-                    <a href="#" class="social-icon" title="Instagram">
+                    <a href="{{ .Site.Params.instagramUrl }}" class="social-icon" title="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="social-icon" title="LinkedIn">
+                    <a href="{{ .Site.Params.linkedinUrl }}" class="social-icon" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="#" class="social-icon" title="GitHub">
+                    <a href="{{ .Site.Params.githubUrl }}" class="social-icon" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
@@ -46,17 +51,17 @@
                 <h5 class="fw-bold mb-4">Quick Links</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2">
-                        <a href="#" class="text-white-50 text-decoration-none">
+                        <a href="{{ .Site.Params.alumniUrl }}" class="text-white-50 text-decoration-none">
                             <i class="fas fa-external-link-alt me-2"></i>Delta Alumni Association
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-white-50 text-decoration-none">
+                        <a href="{{ .Site.Params.nationalUrl }}" class="text-white-50 text-decoration-none">
                             <i class="fas fa-external-link-alt me-2"></i>National Organization
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-white-50 text-decoration-none">
+                        <a href="{{ .Site.Params.universityUrl }}" class="text-white-50 text-decoration-none">
                             <i class="fas fa-external-link-alt me-2"></i>University of Wisconsin-Madison
                         </a>
                     </li>
@@ -68,14 +73,14 @@
         <hr class="bg-white-50">
 
         <!-- Copyright -->
-        <div class="row align-items-center mx-5">
+        <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 <p class="mb-0 text-white-50 small">
-                    © 2024 Kappa Eta Kappa - Delta Chapter. All rights reserved.
+                    &copy; {{ now.Year }} Kappa Eta Kappa - Delta Chapter. All rights reserved.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end">
-                <img src="assets/svg/logo.svg" alt="KHK Logo" class="footer-logo">
+                <img src="{{ "assets/svg/logo.svg" | relURL }}" alt="KHK Logo" class="footer-logo">
             </div>
         </div>
     </div>

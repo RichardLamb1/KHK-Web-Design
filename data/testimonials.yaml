@@ -1,0 +1,28 @@
+# Rush page testimonials. Add/remove/reorder entries here — the rush
+# page just loops over this list in order, alternating the photo
+# between left/right of the quote as it goes.
+#
+# NOTE: all three entries currently hold the same placeholder Rick
+# quote/photo (ported as-is from the live site) — edit these with
+# real member testimonials whenever they're ready.
+- author: "Rick"
+  program: "Computer Engineering"
+  photo: "assets/img/rick-cropped.png"
+  quote: >
+    KHK has been an incredible part of my college experience. The professional development
+    opportunities and the friendships I've made are invaluable. I highly recommend rushing KHK to
+    anyone looking to grow both personally and professionally.
+- author: "Rick"
+  program: "Computer Engineering"
+  photo: "assets/img/rick-cropped.png"
+  quote: >
+    KHK has been an incredible part of my college experience. The professional development
+    opportunities and the friendships I've made are invaluable. I highly recommend rushing KHK to
+    anyone looking to grow both personally and professionally.
+- author: "Rick"
+  program: "Computer Engineering"
+  photo: "assets/img/rick-cropped.png"
+  quote: >
+    KHK has been an incredible part of my college experience. The professional development
+    opportunities and the friendships I've made are invaluable. I highly recommend rushing KHK to
+    anyone looking to grow both personally and professionally.

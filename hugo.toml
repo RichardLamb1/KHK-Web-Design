@@ -4,5 +4,110 @@ locale = 'en-us'
 # The title of the window
 title = 'Kappa Eta Kappa | Delta Chapter | UW-Madison'
 
-# The title to be shown in the navigation bar at the top of the screen
-navtitle = 'KHK Delta Chapter'
+# This site doesn't use tags/categories — skip generating those
+# (otherwise-unused) taxonomy pages and their RSS feeds.
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  # The title shown in the navigation bar at the top of the screen
+  navtitle = 'KHK Delta Chapter'
+
+  # Footer contact info / social links / quick links — the single
+  # place to edit these, used by layouts/_partials/footer.html.
+  addressLine1 = "114 N Orchard St"
+  addressLine2 = "Madison, WI 53715"
+  email = "contact@delta.khk.org"
+  phoneDisplay = "+1 (608) 251-7545"
+  phoneHref = "tel:+16082517545"
+  instagramUrl = "https://www.instagram.com/khkdelta/"
+  linkedinUrl = "https://www.linkedin.com/company/kappa-eta-kappa-delta-chapter/"
+  githubUrl = "https://github.com/Kappa-Eta-Kappa-Delta"
+  alumniUrl = "https://daa.khk.org/"
+  nationalUrl = "https://khk.org/"
+  universityUrl = "https://www.wisc.edu/"
+
+# Nav links — edit here, not in layouts/_partials/navbar.html.
+[[menus.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+  [menus.main.params]
+    anchor = "home"
+
+[[menus.main]]
+  name = "About Us"
+  url = "/about/"
+  weight = 20
+
+[[menus.main]]
+  name = "Our Home"
+  url = "/our-home/"
+  weight = 30
+
+[[menus.main]]
+  name = "Rush Information"
+  url = "/rush/"
+  weight = 40
+
+[[menus.main]]
+  name = "Members"
+  url = "/members/"
+  weight = 50
+
+[[menus.main]]
+  name = "News"
+  url = "/posts/"
+  weight = 60
+  [menus.main.params]
+    sectionmatch = "posts"
+
+# ------------------------------------------------------------------
+# Module mounts
+#
+# The legacy site (root-level *.html/css/ + the old js/*-engine.js
+# files) is fully migrated — every page now comes from content/ +
+# layouts/. What's left of js/ is genuinely-still-client-side behavior
+# (join form, moving employer-logo wall, member card flip/keyboard
+# interactions) kept as plain static files, not build output.
+#
+# Defining any explicit mount replaces ALL of Hugo's implicit default
+# mounts, so every standard directory Hugo needs is listed below too.
+# ------------------------------------------------------------------
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  # assets/sass/** -> Hugo Pipes source (resources.Get "sass/main.scss" in head.html)
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+    includeFiles = ["/sass/**"]
+
+  # assets/{fonts,img,logos,svg} -> copied verbatim to /assets/... in
+  # the built output, matching the paths content/data already use.
+  [[module.mounts]]
+    source = "assets"
+    target = "static/assets"
+    excludeFiles = ["/sass/**"]
+
+  # Remaining plain-JS behavior (join form, moving wall, card flip
+  # interactions) -> served at /js/... unchanged.
+  [[module.mounts]]
+    source = "js"
+    target = "static/js"
