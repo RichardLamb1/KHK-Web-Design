@@ -48,9 +48,9 @@
                         '<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">' +
                             '<h5 class="fw-bold mb-4">Follow Us</h5>' +
                             '<div class="social-links mb-4">' +
-                                '<a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>' +
-                                '<a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>' +
-                                '<a href="#" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>' +
+                                '<a href="https://www.instagram.com/khkdelta/" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>' +
+                                '<a href="https://www.linkedin.com/company/kappa-eta-kappa-delta-chapter/" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>' +
+                                '<a href="https://github.com/Kappa-Eta-Kappa-Delta" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>' +
                             '</div>' +
                             '<p class="small text-white-50">Connect with us on social media for updates and photos from our events.</p>' +
                         '</div>' +
@@ -58,9 +58,9 @@
                         '<div class="col-lg-4 col-md-6">' +
                             '<h5 class="fw-bold mb-4">Quick Links</h5>' +
                             '<ul class="list-unstyled">' +
-                                '<li class="mb-2"><a href="#" class="text-white-50 text-decoration-none"><i class="fas fa-external-link-alt me-2"></i>Delta Alumni Association</a></li>' +
-                                '<li class="mb-2"><a href="#" class="text-white-50 text-decoration-none"><i class="fas fa-external-link-alt me-2"></i>National Organization</a></li>' +
-                                '<li><a href="#" class="text-white-50 text-decoration-none"><i class="fas fa-external-link-alt me-2"></i>University of Wisconsin-Madison</a></li>' +
+                                '<li class="mb-2"><a href="https://daa.khk.org/" class="text-white-50 text-decoration-none"><i class="fas fa-external-link-alt me-2"></i>Delta Alumni Association</a></li>' +
+                                '<li class="mb-2"><a href="https://khk.org/" class="text-white-50 text-decoration-none"><i class="fas fa-external-link-alt me-2"></i>National Organization</a></li>' +
+                                '<li><a href="https://www.wisc.edu/" class="text-white-50 text-decoration-none"><i class="fas fa-external-link-alt me-2"></i>University of Wisconsin-Madison</a></li>' +
                             '</ul>' +
                         '</div>' +
                     '</div>' +
