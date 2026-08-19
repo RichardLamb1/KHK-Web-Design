@@ -1,6 +1,6 @@
-# KHK Delta Chapter - HTML Templates
+# KHK Delta Chapter Website
 
-This repository contains core HTML, CSS, and JavaScript for Kappa Eta Kappa, Delta Chapter at the University of Wisconsin-Madison.
+This repository contains the [Hugo](https://gohugo.io/) site for Kappa Eta Kappa, Delta Chapter at the University of Wisconsin-Madison.
 
 ## Overview
 
@@ -13,47 +13,65 @@ This is a modern, responsive website for Kappa Eta Kappa, a co-ed professional f
 - **Navigation Bar**: Quick access to all main sections with sticky top positioning
 - **Hero Section**: Eye-catching introduction with the KHK crest
 - **Multiple Sections**:
-  - About Us: Organization overview and mission
-  - Events: Professional and social events highlights
-  - Gallery: Event photos and memories
-  - Rush Information: Guide for prospective members
-  - Members: Statistics and member directory link
-  - Alumni: Information about our alumni network
-  - Newsletter: Email subscription form
+  - About Us: Organization overview, mission, values, and chapter history
+  - Our Home: The chapter house
+  - Rush Information: Guide for prospective members, FAQ, testimonials
+  - Members: Executive board + full active-member roster
+  - News: Chapter updates and event recaps
 - **Footer**: Complete contact information, social media links, and external links
 - **Interactive Elements**: Smooth scrolling, animations, form validation
+
+## Local development
+
+1. Install [Hugo Extended](https://gohugo.io/installation/) (e.g. `winget install Hugo.Hugo.Extended`) — the Extended edition is required for the Sass pipeline.
+2. From the repo root: `hugo server` — then open the URL it prints. Draft content (`draft = true`) isn't shown unless you add `-D`.
+3. `hugo --gc --minify` produces a production build in `public/` (gitignored).
 
 ## Project Structure
 
 ```
 /
-├── index.html                # Main homepage
-├── css/
-│   ├── style.css             # Main stylesheet
-│   └── ...                   # Additional styles for subpages
-├── js/
-│   └── main.js               # Main script
+├── hugo.toml                  # Site config: menus, footer/social params, module mounts
+├── content/                   # One file per page/post
+│   ├── _index.md              #   Homepage
+│   ├── about.md, rush.md, our-home.md, members.md, all-posts.md
+│   └── posts/                 #   News posts — see content/posts/README.md to add one
+├── data/                      # Structured content edited as data, not code
+│   ├── members.json           #   Member roster (id/name/photo/status/position/etc.)
+│   ├── employers.json         #   Logos for the moving employer-logo wall
+│   ├── faq.json, testimonials.json, history.yaml
+├── layouts/                   # Go HTML templates
+│   ├── baseof.html            #   Shared page shell
+│   ├── _partials/             #   head / navbar / footer / member-card
+│   ├── posts/                 #   News list + single-post templates
+│   └── _default/              #   One template per other page
 ├── assets/
-│   ├── fonts/                # Font files
-│   ├── img/                  # Image files (event photos, member photos)
-│   │   └── members/          # Member directory images
-│   └── svg/                  # SVG files (logos, crests, icons)
-└ ...                         # Additional pages
+│   ├── sass/                  #   Source for the site's one compiled stylesheet
+│   ├── fonts/, img/, logos/, svg/   # Raw media, served as-is at /assets/...
+├── js/                        # Only genuine client-side behavior lives here now
+│   ├── main.js                 #   Smooth scroll / scroll-to-top
+│   ├── join-form.js            #   "Interested in Joining?" form -> Google Sheet
+│   ├── movingWall.js           #   Animated employer-logo marquee
+│   └── members-interactions.js #   Member card flip/keyboard interactions
+├── archetypes/                 # `hugo new` templates for content/posts
+└── scripts/                    # One-time setup docs (e.g. the join-form Apps Script)
 ```
+
+Navbar, footer, and every page's structure are rendered server-side by Hugo from `content/` + `data/` + `layouts/` — there's no client-side templating engine anymore.
 
 ## Tech Stack
 
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with animations and gradients
-- **JavaScript**: Interactive features and form handling
-- **Bootstrap 5**: Responsive grid system and components
-- **Font Awesome 6**: Icon library for social media and UI elements
+- **[Hugo](https://gohugo.io/)**: static site generator — content in Markdown/TOML front matter, templates in Go HTML
+- **Sass**: one compiled, minified stylesheet (`assets/sass/`) via Hugo Pipes
+- **Bootstrap 5**: responsive grid system and components
+- **Font Awesome 6**: icon library for social media and UI elements
+- **Vanilla JavaScript**: only where real client-side behavior is needed (see `js/` above) — no framework, no JS build step
 
 ## Key Features Explained
 
 ### Navigation
 - Sticky navigation bar that stays visible while scrolling
-- Active link highlighting based on current scroll position
+- Active link highlighting based on the current page (edit links in `hugo.toml`'s `[[menus.main]]`, not in a template)
 - Mobile hamburger menu for responsive design
 - Smooth scroll to sections when links are clicked
 
@@ -77,32 +95,19 @@ This is a modern, responsive website for Kappa Eta Kappa, a co-ed professional f
 ## Customization Guide
 
 ### Contact Information
-Update the footer with actual contact details in `index.html`:
+Edit `[params]` in `hugo.toml` — used by `layouts/_partials/footer.html`:
 - Address: 114 N Orchard St, Madison, WI 53715
 - Email: contact@delta.khk.org
 - Phone: +1 (608) 251-7545
 
 ### Social Media Links
-Update the social media icon links in the footer:
-```html
-<a href="YOUR_INSTAGRAM_URL" class="social-icon" title="Instagram">
-    <i class="fab fa-instagram"></i>
-</a>
-```
+Also in `hugo.toml`'s `[params]` (`instagramUrl`, `linkedinUrl`, `githubUrl`).
 
-### Event Photos
-Replace placeholder images in the gallery section:
-- `assets/img/resume_workshop.jpg`
-- `assets/img/executive_board.jpg`
-- `assets/img/spring_2025_casino_night.jpg`
+### Adding a News Post
+See [`content/posts/README.md`](content/posts/README.md).
 
-### External Links
-Update placeholder links in `index.html`:
-- Rush Information link
-- Member Directory link
-- Alumni Association link
-- National Organization link
-- University of Wisconsin-Madison link
+### Adding/Editing a Member
+Edit `data/members.json` — copy the shape of an existing entry (`id`, `name`, `photo`, `status`, `positionHeld`, etc.). No template changes needed; the page sorts/groups itself automatically.
 
 ## Browser Support
 
@@ -116,7 +121,7 @@ Update placeholder links in `index.html`:
 
 - Optimized images for web
 - CDN-hosted Bootstrap and Font Awesome
-- Minimal custom CSS and JavaScript
+- One compiled, minified, fingerprinted stylesheet
 - Lazy loading for images (built-in with modern browsers)
 
 ## Responsive Breakpoints
@@ -128,14 +133,8 @@ Update placeholder links in `index.html`:
 
 ## Roadmap
 
-Short term:
-- Finalize design, HTML layouts, and page content
-- Collaborate with design team for more specific details
-
-Long term:
-- Migration to a static content manager (Jekyll, Hugo, etc)
-- Possible backend integration with login system
-  - Issue each member a login so they can update their composite photo and links
+- Possible backend integration with a login system
+  - Issue each member a login so they can update their own composite photo and links
 
 ## License
 

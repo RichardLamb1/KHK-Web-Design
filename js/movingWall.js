@@ -24,37 +24,11 @@
  * @license MIT
  */
 
-const wallImages = [
-  { src: "assets/logos/Google-Logo.wine.svg", alt: "Google Logo" },
-  { src: "assets/logos/Tesla,_Inc.-Logo.wine.svg", alt: "Tesla Logo" },
-  { src: "assets/logos/Amazon_(company)-Logo.wine.svg", alt: "Amazon Logo" },
-  { src: "assets/logos/Meta_Platforms-Logo.wine.svg", alt: "Meta Logo" },
-  { src: "assets/logos/The_Walt_Disney_Company-Logo.wine.svg", alt: "Walt Disney Logo" },
-  { src: "assets/logos/McKinsey_&_Company-Logo.wine.svg", alt: "McKinsey Logo" },
-  { src: "assets/logos/Lockheed_Martin-Logo.wine.svg", alt: "Lockheed Martin Logo" },
-  { src: "assets/logos/ExxonMobil-Logo.wine.svg", alt: "ExxonMobil Logo" },
-  { src: "assets/logos/Snapchat-Logo.wine.svg", alt: "Snapchat Logo" },
-  { src: "assets/logos/Honda-Logo.wine.svg", alt: "Honda Logo" },
-  { src: "assets/logos/Capital_One-Logo.wine.svg", alt: "Capital One Logo" },
-  { src: "assets/logos/Moderna_logo.svg", alt: "Moderna Logo" },
-  { src: "assets/logos/Marathon_Petroleum-Logo.wine.svg", alt: "Marathon Petroleum Logo" },
-  { src: "assets/logos/Boston_Scientific_Logo.svg", alt: "Boston Scientific Logo" },
-  { src: "assets/logos/Cargill-Logo.wine.svg", alt: "Cargill Logo" },
-  { src: "assets/logos/burns-and-mcdonnell-logo-vector.svg", alt: "Burns and McDonnell Logo" },
-  { src: "assets/logos/GE_HealthCare_logo_2023.svg", alt: "GE Healthcare Logo" },
-  { src: "assets/logos/Siemens-logo.svg", alt: "Siemens Logo" },
-  { src: "assets/logos/Rivian_logo_and_wordmark.svg", alt: "Rivian Logo" },
-  { src: "assets/logos/BP-Logo.wine.svg", alt: "BP Logo" },
-  { src: "assets/logos/PepsiCo-Logo.wine.svg", alt: "PepsiCo Logo" },
-  { src: "assets/logos/Tokyo_Electron-Logo.wine.svg", alt: "Tokyo Electron Logo" },
-  { src: "assets/logos/Johnson_&_Johnson-Logo.wine.svg", alt: "Johnson & Johnson Logo" },
-  { src: "assets/logos/Expedia-Logo.wine.svg", alt: "Expedia Logo" },
-  { src: "assets/logos/Milwaukee_Logo.svg", alt: "Milwaukee Tool Logo" },
-  { src: "assets/logos/Rockwell_Automation_logo_(2019).svg", alt: "Rockwell Automation Logo" },
-  { src: "assets/logos/Sub-Zero_(logo).svg", alt: "Sub-Zero Logo" },
-  { src: "assets/logos/Honeywell-Logo.wine.svg", alt: "Honeywell Logo" },
-  { src: "assets/logos/Epic_Systems.svg", alt: "Epic Systems Logo" },
-];
+// The logo list itself now lives in data/employers.json (single source
+// of truth, edited there instead of here) and is injected as
+// window.KHK_EMPLOYERS by a small inline <script> on the page that
+// includes the wall — see layouts/_default/members.html.
+const wallImages = window.KHK_EMPLOYERS || [];
 
 const wallTracks = document.querySelectorAll('.wall-track');
 

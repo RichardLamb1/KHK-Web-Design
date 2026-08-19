@@ -1,0 +1,50 @@
+{{ define "main" }}
+<main>
+    <div class="container">
+        <section class="news-hero text-center">
+            <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
+            <p class="lead mb-0">The latest from Kappa Eta Kappa, Delta Chapter &mdash; events, socials, and everything in between.</p>
+        </section>
+
+        {{ $posts := .Pages.ByDate.Reverse }}
+        {{ if not $posts }}
+        <p class="news-empty">No posts yet &mdash; check back soon!</p>
+        {{ else }}
+        {{ $featured := index $posts 0 }}
+        {{ $list := first 4 (after 1 $posts) }}
+        <section id="newsContent" class="pb-5">
+            <div class="news-section-heading">
+                <h2>Latest News</h2>
+                <a href="/all-posts/" class="view-all-link">View All Posts <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <a class="featured-post" href="{{ $featured.RelPermalink }}">
+                        <img class="featured-post-image" src="{{ $featured.Params.image | relURL }}" alt="{{ $featured.Title }}">
+                        <div class="featured-post-body">
+                            <span class="post-date">{{ $featured.Date.Format "January 2, 2006" }}</span>
+                            <h2 class="featured-post-title">{{ $featured.Title }}</h2>
+                            <p class="featured-post-excerpt">{{ $featured.Plain | htmlUnescape | truncate 220 }}</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="post-row-list">
+                        {{ range $list }}
+                        <a class="post-row" href="{{ .RelPermalink }}">
+                            <img class="post-row-image" src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+                            <div class="post-row-content">
+                                <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+                                <h3 class="post-row-title">{{ .Title }}</h3>
+                            </div>
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{ end }}
+    </div>
+</main>
+{{ end }}
