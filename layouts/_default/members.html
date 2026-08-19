@@ -41,7 +41,11 @@
         <div class="wall-track"></div>
         <div class="wall-track"></div>
     </div>
-    <script>window.KHK_EMPLOYERS = {{ site.Data.employers | jsonify | safeJS }};</script>
+    {{ $employers := slice }}
+    {{ range site.Data.employers }}
+        {{ $employers = $employers | append (dict "src" (.src | relURL) "alt" .alt) }}
+    {{ end }}
+    <script>window.KHK_EMPLOYERS = {{ $employers | jsonify | safeJS }};</script>
     <script src="{{ "js/movingWall.js" | relURL }}"></script>
     <div class="text-center moving-wall-title">
         <h1 class="display-4 fw-bold text-white">{{ .Params.hero_heading }}</h1>

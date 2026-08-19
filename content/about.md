@@ -41,46 +41,46 @@ button_text = "Visit the Fraternity House page"
 button_url = "/our-home/"
 
 [alumni_network]
-intro = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Use the arrows to scroll through members of our growing alumni network."
+intro = "Use the arrows to scroll through members of our growing alumni network."
 
 [[alumni_network.members]]
-name = "Alumni Name"
+name = "Samuel Hurley"
 pledge_class = "Fall 2010 Pledge Class"
 position = "Software Engineer, Example Corp"
-quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+quote = "Quote incoming"
 [[alumni_network.members]]
-name = "Alumni Name"
+name = "Nicole Kemnitz"
 pledge_class = "Spring 2012 Pledge Class"
 position = "Product Manager, Example Inc."
-quote = "Sed do eiusmod tempor incididunt ut labore et dolore."
+quote = "Quote incoming"
 [[alumni_network.members]]
-name = "Alumni Name"
+name = "Jack Klausner"
 pledge_class = "Fall 2014 Pledge Class"
 position = "Data Scientist, Example Analytics"
-quote = "Ut enim ad minim veniam, quis nostrud exercitation."
+quote = "Quote incoming"
 [[alumni_network.members]]
-name = "Alumni Name"
+name = "Parker Jorenby"
 pledge_class = "Spring 2016 Pledge Class"
 position = "Hardware Engineer, Example Systems"
-quote = "Duis aute irure dolor in reprehenderit in voluptate."
+quote = "Quote incoming"
 [[alumni_network.members]]
-name = "Alumni Name"
+name = "Kira Israni"
 pledge_class = "Fall 2018 Pledge Class"
 position = "Consultant, Example Group"
-quote = "Excepteur sint occaecat cupidatat non proident, sunt."
+quote = "Quote incoming"
 [[alumni_network.members]]
-name = "Alumni Name"
+name = "Arnav Bhardia"
 pledge_class = "Spring 2020 Pledge Class"
 position = "Founder, Example Startup"
-quote = "Sed ut perspiciatis unde omnis iste natus error sit."
+quote = "Quote incoming"
 [[alumni_network.members]]
-name = "Alumni Name"
+name = "Neha Talluri"
 pledge_class = "Fall 2022 Pledge Class"
 position = "Research Engineer, Example Labs"
-quote = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur."
+quote = "Quote incoming"
 [[alumni_network.members]]
-name = "Alumni Name"
+name = "Jerry Peplinski"
 pledge_class = "Spring 2024 Pledge Class"
 position = "Analyst, Example Financial"
-quote = "At vero eos et accusamus et iusto odio dignissimos."
+quote = "Quote incoming"
 +++

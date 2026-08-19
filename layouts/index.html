@@ -15,8 +15,7 @@
                     <h2 class="h3 mb-4">{{ $hero.subheading }}</h2>
                     <p class="lead mb-4">{{ $hero.lead }}</p>
                     <div class="hero-buttons">
-                        <a href="/rush/" class="btn btn-primary btn-lg me-3">Learn About Rush</a>
-                        <a href="#about" class="btn btn-outline-light btn-lg">Explore Our Story</a>
+                        <a href="/rush/" class="btn btn-primary btn-lg">Learn About Rush</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +36,7 @@
                 {{ range $i, $p := .Params.about_teaser.about_paragraphs }}
                 <p class="{{ if eq $i 0 }}lead mb-3{{ else if eq (add $i 1) (len $.Params.about_teaser.about_paragraphs) }}{{ else }}mb-3{{ end }}">{{ $p }}</p>
                 {{ end }}
-                <a href="#" class="btn btn-primary btn-lg">Our Story</a>
+                <a href="/about/" class="btn btn-primary btn-lg">Our Story</a>
             </div>
         </div>
     </div>
