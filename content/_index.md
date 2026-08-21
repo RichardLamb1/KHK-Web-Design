@@ -40,15 +40,11 @@ number = "50+"
 label = "Active Members"
 color = "text-primary"
 [[member_stats]]
-number = "100+"
-label = "Alumni Network"
+number = "300+"
+label = "Alumni"
 color = "text-success"
 [[member_stats]]
-number = "3.321"
-label = "Average GPA"
-color = "text-info"
-[[member_stats]]
-number = "15"
+number = "15+"
 label = "Countries Represented"
 color = "text-warning"
 

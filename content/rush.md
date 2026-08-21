@@ -73,4 +73,8 @@ instagram_embed_url = "https://www.instagram.com/khkdelta/embed/"
 instagram_url = "https://instagram.com/khkdelta"
 linkedin_name = "Kappa Eta Kappa - Madison"
 linkedin_url = "https://www.linkedin.com/company/kappa-eta-kappa-delta-chapter/"
+# TODO: slot in the real TikTok handle/link, then the "Open TikTok" button
+# will activate automatically (it stays disabled while tiktok_url is "TBD").
+tiktok_name = "Kappa Eta Kappa"
+tiktok_url = "TBD"
 +++

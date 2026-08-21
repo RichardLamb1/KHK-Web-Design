@@ -62,21 +62,4 @@ text = "The basement includes both normal and party lighting and sound for socia
 [[housing.features]]
 title = "Office workspace"
 text = "On the first floor you'll find a stacked office, containing equipment for engineering projects and an excellent, capable PC for all your software needs. It even has a 3D printer!"
-
-[[amenities]]
-icon = "fas fa-ruler-combined"
-title = "Large rooms"
-text = "Room layouts are generous and flexible, making the house comfortable for members living there."
-[[amenities]]
-icon = "fas fa-microphone"
-title = "Lighting and sound"
-text = "The basement is set up with professional-grade lighting and sound for events and chapter gatherings."
-[[amenities]]
-icon = "fas fa-print"
-title = "Free printing"
-text = "Members have access to free 2D and 3D printing, which makes the house useful for school and personal projects."
-[[amenities]]
-icon = "fas fa-utensils"
-title = "New kitchen"
-text = "A newly renovated kitchen gives the chapter a cleaner, brighter place to cook and gather for meals."
 +++

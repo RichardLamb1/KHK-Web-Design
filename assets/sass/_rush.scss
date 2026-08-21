@@ -241,6 +241,25 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
+    // Pinned to a fixed height (not just a minimum) so the embed frame
+    // below always starts at the same offset across the Instagram/LinkedIn/
+    // TikTok cards, regardless of whether a given account name is short
+    // enough to fit on one line or would otherwise wrap to two.
+    height: 3.5rem;
+    overflow: hidden;
+
+    // The text column needs to be allowed to shrink below its content size
+    // for the truncation below to actually kick in inside a flex row.
+    > div:last-child {
+        min-width: 0;
+    }
+
+    h3,
+    p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 }
 
 .instagram-avatar {
@@ -266,6 +285,20 @@
     justify-content: center;
     color: #fff;
     background: linear-gradient(45deg, #0a66c2 0%, #691f62 100%);
+    box-shadow: 0 12px 24px rgba(74, 31, 111, 0.2);
+    font-size: 1.2rem;
+    flex: 0 0 auto;
+}
+
+.tiktok-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(135deg, #25f4ee 0%, #000 55%, #fe2c55 100%);
     box-shadow: 0 12px 24px rgba(74, 31, 111, 0.2);
     font-size: 1.2rem;
     flex: 0 0 auto;

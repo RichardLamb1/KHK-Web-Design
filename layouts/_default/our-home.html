@@ -92,25 +92,5 @@
             </div>
         </div>
     </section>
-
-    <section class="house-amenities-section py-5">
-        <div class="container">
-            <div class="section-heading text-center mb-5">
-                <span class="section-kicker">House Amenities</span>
-                <h2 class="display-6 fw-bold mt-2 mb-3">A house that supports chapter life</h2>
-            </div>
-            <div class="row g-4">
-                {{ range .Params.amenities }}
-                <div class="col-md-6 col-lg-3">
-                    <div class="amenity-card h-100">
-                        <i class="{{ .icon }} amenity-icon"></i>
-                        <h3 class="h5 fw-bold">{{ .title }}</h3>
-                        <p class="mb-0">{{ .text }}</p>
-                    </div>
-                </div>
-                {{ end }}
-            </div>
-        </div>
-    </section>
 </main>
 {{ end }}
