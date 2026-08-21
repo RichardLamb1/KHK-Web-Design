@@ -8,6 +8,21 @@
         linear-gradient(135deg, rgba(74, 31, 111, 0.08), rgba(196, 30, 58, 0.05));
 }
 
+// Explicit, scoped section backgrounds — alternating white / pale-lavender,
+// matching the striping used on the home page's own sections instead of
+// relying on the generic bg-light utility.
+.house-location-section {
+    background: var(--surface-bg);
+}
+
+.housing-section {
+    background: var(--surface-bg-alt);
+}
+
+.house-amenities-section {
+    background: var(--surface-bg);
+}
+
 .section-kicker {
     display: inline-block;
     font-size: 0.78rem;
