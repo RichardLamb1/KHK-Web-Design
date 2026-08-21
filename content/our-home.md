@@ -4,7 +4,7 @@ layout = 'our-home'
 
 [hero]
 kicker = "Our Home"
-heading = "Fraternity House"
+heading = "The KHK Delta House"
 lead = "The chapter house at 114 N Orchard St, Madison, WI 53715 is the center of our day-to-day chapter life, giving members a place to live, study, build projects, and spend time together."
 copy = "From the front porch to the basement workshop spaces, the house is designed to feel like a second home. It is close enough to campus to make the walk simple, but still has the space and atmosphere that make it unique."
 image = "https://placehold.co/1200x900/png?text=Outside+of+the+Fraternity+House"
