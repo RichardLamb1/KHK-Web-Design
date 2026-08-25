@@ -287,17 +287,7 @@
 }
 
 .member-stat {
-    padding: 2rem;
-    background: var(--surface-bg);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px var(--shadow-color);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
-
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px var(--shadow-color);
-    }
+    padding: 1rem 0;
 
     h3 {
         font-weight: 800;
@@ -308,6 +298,13 @@
         margin: 0;
         font-weight: 500;
     }
+}
+
+// Count-up target numbers (see initializeStatCounters in js/main.js). Given
+// a fixed width based on the final digit count keeps the layout from
+// jittering as the digits tick up from "0".
+.stat-number {
+    font-variant-numeric: tabular-nums;
 }
 
 // ---------- Rush (teaser) ----------

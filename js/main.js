@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollToTopButton();
     initializeNavigationHighlight();
     initializeIntersectionObserver();
+    initializeStatCounters();
 });
 
 // ==========================================
@@ -187,6 +188,67 @@ function initializeIntersectionObserver() {
         el.classList.add('opacity-0'); // Start hidden
         observer.observe(el);
     });
+}
+
+// ==========================================
+// STAT COUNT-UP ON SCROLL
+// (the "Our Members" numbers on the home page)
+// ==========================================
+
+function initializeStatCounters() {
+    const counters = document.querySelectorAll('.stat-number[data-count-to]');
+    if (!counters.length) {
+        return;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const duration = 1500; // ms
+
+    function animateCounter(el) {
+        const target = el.getAttribute('data-count-to') || '';
+        const match = target.match(/^([\d,]+)(.*)$/); // leading number + any suffix (e.g. "+")
+
+        // No leading number to count up to (or the user prefers less motion) -
+        // just show the final label as-is.
+        if (!match || prefersReducedMotion) {
+            el.textContent = target;
+            return;
+        }
+
+        const endValue = parseInt(match[1].replace(/,/g, ''), 10);
+        const suffix = match[2];
+        let startTime = null;
+
+        function step(timestamp) {
+            if (startTime === null) {
+                startTime = timestamp;
+            }
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            // easeOutExpo: fast climb that settles gently into the final number
+            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = Math.floor(eased * endValue);
+            el.textContent = current.toLocaleString() + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = target; // land on the exact original string
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    counters.forEach(el => observer.observe(el));
 }
 
 // ==========================================

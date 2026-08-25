@@ -109,6 +109,8 @@ See [`content/posts/README.md`](content/posts/README.md).
 ### Adding/Editing a Member
 Edit `data/members.json` — copy the shape of an existing entry (`id`, `name`, `photo`, `status`, `positionHeld`, etc.). No template changes needed; the page sorts/groups itself automatically.
 
+The `linkedin`/`github`/`website`/`resume` fields are all optional — leave any of them `null` and its icon just doesn't show up on the card. `linkedin`/`github`/`website` take a full URL; `resume` takes a site-relative path to a PDF dropped in `static/files/resumes/` (e.g. `"files/resumes/agrawal-vidit.pdf"` for a member with `id: "agrawal-vidit"`).
+
 ## Browser Support
 
 - Chrome (latest)

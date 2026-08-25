@@ -80,7 +80,7 @@
             {{ range .Params.member_stats }}
             <div class="col-md-6 col-lg-3 mb-4">
                 <div class="member-stat">
-                    <h3 class="display-6 fw-bold {{ .color }}">{{ .number }}</h3>
+                    <h3 class="display-6 fw-bold {{ .color }} stat-number" data-count-to="{{ .number }}">0</h3>
                     <p class="fs-5">{{ .label }}</p>
                 </div>
             </div>
