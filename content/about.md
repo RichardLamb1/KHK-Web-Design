@@ -39,48 +39,4 @@ image = "assets/img/spring_2025_steak_dinner.jpg"
 image_alt = "Inside the KHK chapter house"
 button_text = "Visit the Fraternity House page"
 button_url = "/our-home/"
-
-[alumni_network]
-intro = "Use the arrows to scroll through members of our growing alumni network."
-
-[[alumni_network.members]]
-name = "Samuel Hurley"
-pledge_class = "Fall 2010 Pledge Class"
-position = "Software Engineer, Example Corp"
-quote = "Quote incoming"
-[[alumni_network.members]]
-name = "Nicole Kemnitz"
-pledge_class = "Spring 2012 Pledge Class"
-position = "Product Manager, Example Inc."
-quote = "Quote incoming"
-[[alumni_network.members]]
-name = "Jack Klausner"
-pledge_class = "Fall 2014 Pledge Class"
-position = "Data Scientist, Example Analytics"
-quote = "Quote incoming"
-[[alumni_network.members]]
-name = "Parker Jorenby"
-pledge_class = "Spring 2016 Pledge Class"
-position = "Hardware Engineer, Example Systems"
-quote = "Quote incoming"
-[[alumni_network.members]]
-name = "Kira Israni"
-pledge_class = "Fall 2018 Pledge Class"
-position = "Consultant, Example Group"
-quote = "Quote incoming"
-[[alumni_network.members]]
-name = "Arnav Bhardia"
-pledge_class = "Spring 2020 Pledge Class"
-position = "Founder, Example Startup"
-quote = "Quote incoming"
-[[alumni_network.members]]
-name = "Neha Talluri"
-pledge_class = "Fall 2022 Pledge Class"
-position = "Research Engineer, Example Labs"
-quote = "Quote incoming"
-[[alumni_network.members]]
-name = "Jerry Peplinski"
-pledge_class = "Spring 2024 Pledge Class"
-position = "Analyst, Example Financial"
-quote = "Quote incoming"
 +++

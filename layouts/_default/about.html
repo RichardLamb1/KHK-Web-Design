@@ -1,6 +1,5 @@
 {{ define "main" }}
 {{ $teaser := .Params.our_home_teaser }}
-{{ $alumni := .Params.alumni_network }}
 <main>
     <!-- About Header -->
     <section class="about-hero-image-section"></section>
@@ -118,16 +117,16 @@
         <div class="container-fluid px-4 px-lg-5">
             <div class="section-heading text-center mb-5">
                 <h2 class="display-6 fw-bold mt-2 mb-3">Our Alumni Network</h2>
-                <p class="lead mx-auto about-section-lead">{{ $alumni.intro }}</p>
+                <p class="lead mx-auto about-section-lead">Use the arrows to scroll through members of our growing alumni network.</p>
             </div>
             <div class="alumni-belt-wrapper">
                 <button class="belt-control belt-control-prev" type="button" aria-label="Scroll to previous alumnus">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div class="alumni-belt" id="alumniBelt">
-                    {{ range $alumni.members }}
+                    {{ range site.Data.alumni_testimonials }}
                     <div class="alumni-card">
-                        <img src="{{ "assets/img/rick-cropped.png" | relURL }}" alt="Alumni headshot" class="alumni-card-img">
+                        <img src="{{ if .photo }}{{ .photo | relURL }}{{ else }}{{ "assets/img/rick-cropped.png" | relURL }}{{ end }}" alt="Alumni headshot" class="alumni-card-img">
                         <div class="alumni-card-body">
                             <h3 class="alumni-name">{{ .name }}</h3>
                             <p class="alumni-pledge mb-0">{{ .pledge_class }}</p>

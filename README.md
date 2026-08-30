@@ -39,7 +39,8 @@ This is a modern, responsive website for Kappa Eta Kappa, a co-ed professional f
 ├── data/                      # Structured content edited as data, not code
 │   ├── members.json           #   Member roster (id/name/photo/status/position/etc.)
 │   ├── employers.json         #   Logos for the moving employer-logo wall
-│   ├── faq.json, testimonials.json, history.yaml
+│   ├── faq.yaml, testimonials.yaml, history.yaml
+│   ├── alumni_testimonials.yaml #   "Our Alumni Network" belt on the About page
 ├── layouts/                   # Go HTML templates
 │   ├── baseof.html            #   Shared page shell
 │   ├── _partials/             #   head / navbar / footer / member-card
