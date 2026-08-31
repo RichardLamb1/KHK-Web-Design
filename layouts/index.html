@@ -29,7 +29,7 @@
     <div class="container">
         <div class="row align-items-center mb-5">
             <div class="col-lg-6">
-                <img src="{{ $aboutTeaser.image | relURL }}" alt="{{ $aboutTeaser.image_alt }}" class="img-fluid rounded-3 shadow-lg">
+                <img src="{{ $aboutTeaser.image | relURL }}" alt="{{ $aboutTeaser.image_alt }}" class="img-fluid rounded-3 shadow-lg" loading="lazy">
             </div>
             <div class="col-lg-6 ps-lg-5">
                 <h2 class="display-5 fw-bold mb-4">About Kappa Eta Kappa</h2>
@@ -49,7 +49,7 @@
         <div class="carousel-inner">
             {{ range $i, $slide := .Params.what_we_do }}
             <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
-                <img src="{{ $slide.image | relURL }}" alt="{{ $slide.image_alt }}" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(0.7);">
+                <img src="{{ $slide.image | relURL }}" alt="{{ $slide.image_alt }}" class="d-block w-100" style="height: 500px; object-fit: cover; filter: brightness(0.7);" loading="lazy">
                 <div class="carousel-caption text-start d-none d-md-block">
                     <h5 class="h2">{{ $slide.title }}</h5>
                     <p>{{ $slide.text }}</p>
@@ -97,7 +97,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="{{ $rushTeaser.image | relURL }}" alt="{{ $rushTeaser.image_alt }}" class="img-fluid rounded-3 shadow-lg">
+                <img src="{{ $rushTeaser.image | relURL }}" alt="{{ $rushTeaser.image_alt }}" class="img-fluid rounded-3 shadow-lg" loading="lazy">
             </div>
             <div class="col-lg-6 ps-lg-5">
                 <h2 class="display-5 fw-bold mb-4">Join Our Brotherhood</h2>
@@ -126,7 +126,7 @@
                 {{ end }}
             </div>
             <div class="col-lg-6 text-center">
-                <img src="{{ $alumniTeaser.image | relURL }}" alt="{{ $alumniTeaser.image_alt }}" class="img-fluid rounded-3">
+                <img src="{{ $alumniTeaser.image | relURL }}" alt="{{ $alumniTeaser.image_alt }}" class="img-fluid rounded-3" loading="lazy">
             </div>
         </div>
         <div class="text-center pt-4">

@@ -21,7 +21,7 @@
     <div class="member-card-inner">
         <div class="member-card-face member-card-front">
             <div class="member-image-wrapper">
-                <img src="{{ $m.photo | relURL }}" alt="{{ $m.name }}" class="member-image">
+                {{ partial "member-photo.html" (dict "src" $m.photo "alt" $m.name "class" "member-image") }}
                 {{ if or $m.linkedin $m.github $m.website $m.resume }}
                 <div class="member-overlay">
                     <div class="member-social">
@@ -42,7 +42,7 @@
         </div>
         <div class="member-card-face member-card-back" aria-hidden="true">
             <div class="member-image-wrapper">
-                <img src="{{ $casualPhoto | relURL }}" alt="{{ $m.name }} (casual photo)" class="member-image">
+                {{ partial "member-photo.html" (dict "src" $casualPhoto "alt" (printf "%s (casual photo)" $m.name) "class" "member-image") }}
                 {{ if or $m.instagram $m.snapchat $m.tiktok }}
                 <div class="member-overlay">
                     <div class="member-social">

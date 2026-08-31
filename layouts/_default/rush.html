@@ -131,7 +131,7 @@
             <div class="row g-4 justify-content-center mb-5">
                 {{ if $imageFirst }}
                 <div class="col-md-4">
-                    <img src="{{ $t.photo | relURL }}" alt="{{ $t.author }} Testimonial" class="d-block mx-auto testimonial-photo" height="180">
+                    <img src="{{ $t.photo | relURL }}" alt="{{ $t.author }} Testimonial" class="d-block mx-auto testimonial-photo" height="180" loading="lazy">
                 </div>
                 {{ end }}
                 <div class="col-md-8 d-flex align-items-center">
@@ -142,7 +142,7 @@
                 </div>
                 {{ if not $imageFirst }}
                 <div class="col-md-4">
-                    <img src="{{ $t.photo | relURL }}" alt="{{ $t.author }} Testimonial" class="d-block mx-auto testimonial-photo" height="180">
+                    <img src="{{ $t.photo | relURL }}" alt="{{ $t.author }} Testimonial" class="d-block mx-auto testimonial-photo" height="180" loading="lazy">
                 </div>
                 {{ end }}
             </div>

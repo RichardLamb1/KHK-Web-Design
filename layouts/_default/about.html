@@ -80,7 +80,7 @@
                             <div class="timeline-details">
                                 <div class="row align-items-center g-4">
                                     <div class="col-md-5{{ if eq .image_side "right" }} order-md-2{{ end }}">
-                                        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}" class="img-fluid history-image">
+                                        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}" class="img-fluid history-image" loading="lazy">
                                     </div>
                                     <div class="col-md-7{{ if eq .image_side "right" }} order-md-1{{ end }}">
                                         <p class="history-text mb-0">{{ .text | safeHTML }}</p>
@@ -106,7 +106,7 @@
                     <a href="{{ $teaser.button_url }}" class="btn btn-primary">{{ $teaser.button_text }}</a>
                 </div>
                 <div class="col-lg-6">
-                    <img src="{{ $teaser.image | relURL }}" alt="{{ $teaser.image_alt }}" class="img-fluid rounded-3 shadow-lg">
+                    <img src="{{ $teaser.image | relURL }}" alt="{{ $teaser.image_alt }}" class="img-fluid rounded-3 shadow-lg" loading="lazy">
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
                 <div class="alumni-belt" id="alumniBelt">
                     {{ range site.Data.alumni_testimonials }}
                     <div class="alumni-card">
-                        <img src="{{ if .photo }}{{ .photo | relURL }}{{ else }}{{ "assets/img/rick-cropped.png" | relURL }}{{ end }}" alt="Alumni headshot" class="alumni-card-img">
+                        <img src="{{ if .photo }}{{ .photo | relURL }}{{ else }}{{ "assets/img/rick-cropped.png" | relURL }}{{ end }}" alt="Alumni headshot" class="alumni-card-img" loading="lazy">
                         <div class="alumni-card-body">
                             <h3 class="alumni-name">{{ .name }}</h3>
                             <p class="alumni-pledge mb-0">{{ .pledge_class }}</p>
