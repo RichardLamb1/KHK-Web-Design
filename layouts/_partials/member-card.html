@@ -8,8 +8,11 @@
   Front-face "professional" link fields (all optional — omit/null to hide
   that icon, same as every other field on this card):
     linkedin/github/website: full URL, e.g. "https://github.com/handle"
-    resume: site-relative path to a PDF, e.g. "files/resumes/<id>.pdf"
-            (dropped in static/files/resumes/, resolved via relURL below)
+    resume: site-relative path to a PDF, e.g. "assets/resumes/<Last, First - Resume>.pdf"
+            (mounted from assets/ into static/assets/ via hugo.toml, resolved via relURL below)
+
+  Back-face "casual" link fields (optional):
+    instagram/snapchat/tiktok: full URL
 */}}
 {{ $m := .member }}
 {{ $isExec := .isExec }}
@@ -40,11 +43,12 @@
         <div class="member-card-face member-card-back" aria-hidden="true">
             <div class="member-image-wrapper">
                 <img src="{{ $casualPhoto | relURL }}" alt="{{ $m.name }} (casual photo)" class="member-image">
-                {{ if or $m.instagram $m.snapchat }}
+                {{ if or $m.instagram $m.snapchat $m.tiktok }}
                 <div class="member-overlay">
                     <div class="member-social">
                         {{ if $m.instagram }}<a href="{{ $m.instagram }}" class="social-btn" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>{{ end }}
                         {{ if $m.snapchat }}<a href="{{ $m.snapchat }}" class="social-btn" title="Snapchat" target="_blank" rel="noopener"><i class="fab fa-snapchat"></i></a>{{ end }}
+                        {{ if $m.tiktok }}<a href="{{ $m.tiktok }}" class="social-btn" title="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>{{ end }}
                     </div>
                 </div>
                 {{ end }}
