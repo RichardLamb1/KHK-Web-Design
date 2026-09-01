@@ -78,6 +78,7 @@
                         </button>
                         <div class="collapse" id="{{ $targetId }}">
                             <div class="timeline-details">
+                                {{ if or (eq .id "2020") (eq .id "2026") }}
                                 <div class="row align-items-center g-4">
                                     <div class="col-md-5{{ if eq .image_side "right" }} order-md-2{{ end }}">
                                         <img src="{{ .image | relURL }}" alt="{{ .image_alt }}" class="img-fluid history-image" loading="lazy">
@@ -86,6 +87,9 @@
                                         <p class="history-text mb-0">{{ .text | safeHTML }}</p>
                                     </div>
                                 </div>
+                                {{ else }}
+                                <p class="history-text mb-0">{{ .text | safeHTML }}</p>
+                                {{ end }}
                             </div>
                         </div>
                     </div>

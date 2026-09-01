@@ -44,19 +44,19 @@ location = "Wendt Commons Rm. 312"
 [[events]]
 date = "Sep 16, 2026"
 title = "Trivia Night"
-text = "Meet our members, try to win at trivia, and have a great time!"
+text = "Meet our members, try to win at trivia, and have a great time with some FREE Cane's! "
 time = "6:00 PM - 8:00 PM"
 location = "Morgridge Hall Rm. 2522"
 [[events]]
 date = "Sep 18, 2026"
 title = "Speed Dating"
-text = "Get to know our members in rapid 1-on-1 conversations!"
+text = "Get to know our members in rapid 1-on-1 conversations and enjoy some FREE Jimmy John's on the side!"
 time = "6:00 PM - 8:00 PM"
 location = "Wendt Commons Rm. 312"
 [[events]]
 date = "Sep 22, 2026"
 title = "Industry Talk"
-text = "Join for a discussion about industry standards, hearing from an expert!"
+text = "Join for a discussion about industry standards, hearing from an expert! We've got some great pizza waiting for you too!"
 time = "6:00 PM - 8:00 PM"
 location = "Morgridge Hall Rm. 2522"
 [[events]]
@@ -67,14 +67,25 @@ time = "6:00 PM - 8:00 PM"
 location = "Sett Recreation"
 
 [socials]
-intro = "See chapter photos, event reminders, and highlights from rush on our Instagram. Check out our LinkedIn for professional updates and alumni news. Follow us so you don't miss out!"
+intro = "See chapter photos, event reminders, and highlights from rush on our Instagram. Follow our TikTok for behind-the-scenes moments from the chapter. Follow us so you don't miss out!"
 instagram_handle = "@khkdelta"
-instagram_embed_url = "https://www.instagram.com/khkdelta/embed/"
 instagram_url = "https://instagram.com/khkdelta"
+# The one post featured in the embedded player on the Rush page (Instagram's
+# plain profile embed was too small/mostly-blank for the space it had, so
+# this uses their single-post embed instead, same idea as the TikTok video
+# below). To swap it, open the post on instagram.com, copy its URL, and
+# drop it in here.
+instagram_post_url = "https://www.instagram.com/p/DcoWVjMOEsj/"
+# TEMP: LinkedIn card hidden on the Rush page for now (see layouts/_default/rush.html).
+# These two fields stay here so the card can be restored without re-entering them.
 linkedin_name = "Kappa Eta Kappa - Madison"
 linkedin_url = "https://www.linkedin.com/company/kappa-eta-kappa-delta-chapter/"
-# TODO: slot in the real TikTok handle/link, then the "Open TikTok" button
-# will activate automatically (it stays disabled while tiktok_url is "TBD").
 tiktok_name = "Kappa Eta Kappa"
-tiktok_url = "TBD"
+tiktok_handle = "@khk_delta"
+tiktok_url = "https://www.tiktok.com/@khk_delta?_r=1&_t=ZT-994VxzWU1Hx"
+# The one video featured in the embedded player on the Rush page. To swap it,
+# open the video on tiktok.com, copy its URL, and take the numeric id from the
+# end of that URL (the part after "/video/") for tiktok_video_id below.
+tiktok_video_url = "https://www.tiktok.com/@khk_delta/video/7600194057012366623"
+tiktok_video_id = "7600194057012366623"
 +++

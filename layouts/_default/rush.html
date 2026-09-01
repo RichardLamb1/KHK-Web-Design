@@ -119,6 +119,9 @@
         </div>
     </section>
 
+    {{/* TEMP: "What Our Members Say" testimonials section hidden for now.
+         Remove this comment wrapper to bring it back. */}}
+    {{/*
     <!-- Testimonials -->
     <section id="testimonials" class="rush-testimonials py-5 bg-light">
         <div class="container">
@@ -149,6 +152,7 @@
             {{ end }}
         </div>
     </section>
+    */}}
 
     <!-- Social Media -->
     <section class="rush-socials py-5">
@@ -158,7 +162,7 @@
                 <h2 class="display-6 fw-bold mt-2 mb-3">Follow @khkdelta</h2>
                 <p class="lead mb-4">{{ $socials.intro }}</p>
             </div>
-            <div class="row align-items-stretch g-4">
+            <div class="row align-items-stretch g-4 justify-content-center">
                 <div class="col-lg-4"> <!-- Instagram -->
                     <div class="instagram-frame-shell h-100">
                         <div class="instagram-frame-header">
@@ -168,13 +172,20 @@
                                 <p class="mb-0 text-muted">{{ $socials.instagram_handle }}</p>
                             </div>
                         </div>
-                        <div class="instagram-frame ratio ratio-1x1">
-                            <iframe src="{{ $socials.instagram_embed_url }}"
-                                title="Instagram profile for KHK Delta Chapter" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade" allowtransparency="true"></iframe>
+                        {{/* Instagram's official single-post embed (embed.js scans the page
+                             for .instagram-media blockquotes and renders the post in place
+                             of each one). Swap instagram_post_url in content/rush.md to
+                             feature a different post. .social-post-frame forces this into
+                             the same fixed box as the TikTok embed below, since Instagram's
+                             and TikTok's embeds otherwise pick their own, different sizes. */}}
+                        <div class="social-post-frame">
+                            <blockquote class="instagram-media" data-instgrm-permalink="{{ $socials.instagram_post_url }}"
+                                data-instgrm-version="14">
+                            </blockquote>
+                            <script async src="//www.instagram.com/embed.js"></script>
                         </div>
                         <p class="instagram-note mb-0">
-                            If the embedded profile does not load in your browser, use the button to open the account
+                            If the embedded post does not load in your browser, use the button to open the account
                             directly.
                         </p>
                         <div class="d-flex justify-content-center mt-3">
@@ -185,6 +196,10 @@
                         </div>
                     </div>
                 </div> <!-- End Instagram -->
+                {{/* TEMP: LinkedIn card hidden for now. Remove this comment
+                     wrapper to bring it back (linkedin_name/linkedin_url are
+                     still set in content/rush.md). */}}
+                {{/*
                 <div class="col-lg-4"> <!-- LinkedIn -->
                     <div class="instagram-frame-shell h-100">
                         <div class="instagram-frame-header">
@@ -210,21 +225,32 @@
                         </div>
                     </div>
                 </div> <!-- End LinkedIn -->
+                */}}
                 <div class="col-lg-4"> <!-- TikTok -->
                     <div class="instagram-frame-shell h-100">
                         <div class="instagram-frame-header">
                             <div class="tiktok-avatar"><i class="fab fa-tiktok"></i></div>
                             <div>
-                                <h3 class="h5 mb-1">{{ $socials.tiktok_name }}</h3>
+                                <h3 class="h5 mb-0">{{ $socials.tiktok_name }}</h3>
+                                <p class="mb-0 text-muted">{{ $socials.tiktok_handle }}</p>
                             </div>
                         </div>
-                        <div class="instagram-frame ratio ratio-1x1">
-                            <p>
-                                TikTok Profile Embed In Progress
-                            </p>
+                        {{/* TikTok's official single-video embed (embed.js scans the page
+                             for .tiktok-embed blockquotes and renders a player in place of
+                             each one). Swap tiktok_video_url/tiktok_video_id in
+                             content/rush.md to feature a different video. .social-post-frame
+                             forces this into the same fixed box as the Instagram embed
+                             above, since TikTok's and Instagram's embeds otherwise pick
+                             their own, different sizes. */}}
+                        <div class="social-post-frame">
+                            <blockquote class="tiktok-embed" cite="{{ $socials.tiktok_video_url }}"
+                                data-video-id="{{ $socials.tiktok_video_id }}">
+                                <section></section>
+                            </blockquote>
+                            <script async src="https://www.tiktok.com/embed.js"></script>
                         </div>
                         <p class="instagram-note mb-0">
-                            If the embedded profile does not load in your browser, use the button to open the account
+                            If the embedded video does not load in your browser, use the button to open the account
                             directly.
                         </p>
                         <div class="d-flex justify-content-center mt-3">

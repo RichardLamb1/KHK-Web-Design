@@ -318,6 +318,33 @@
     }
 }
 
+// Instagram's and TikTok's official embeds each pick their own width/height
+// by default, and those defaults don't match each other — so instead of
+// letting either embed size itself, this gives both cards one identical
+// fixed-size box and forces the embed (and whatever iframe it generates
+// inside itself once its script runs) to fill it. That's what actually
+// guarantees the two cards render at equal dimensions, rather than each
+// platform's embed picking its own, slightly different size.
+.social-post-frame {
+    width: 100%;
+    max-width: 380px;
+    height: 540px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: var(--surface-bg-alt);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+
+    > blockquote {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+}
+
 .instagram-note {
     margin-top: 1rem;
     color: var(--text-muted);
