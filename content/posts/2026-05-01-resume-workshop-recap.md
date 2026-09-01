@@ -3,6 +3,11 @@ title = "Resume Workshop: Before and After"
 date = 2026-05-01
 author = "Aisha Thompson"
 image = "assets/img/postImgs/resume-workshop-recap.jpg"
+
+# TEMP (Temp branch): News deactivated, individual post hidden. Remove this block to restore.
+[build]
+  render = false
+  list = false
 +++
 
 Our annual resume workshop brought together members and alumni for an evening of red pens, hard truths, and (hopefully) much stronger resumes.

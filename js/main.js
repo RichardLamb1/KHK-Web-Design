@@ -67,17 +67,24 @@ function initializeScrollBehavior() {
 }
 
 // ==========================================
-// SCROLL TO TOP BUTTON
+// HOME PAGE "RUSH!" CTA BUTTON
+// (repurposed from a universal scroll-to-top button; only appears on the
+// home page and jumps down to the "Interested in Joining?" sign-up form)
 // ==========================================
 
 function initializeScrollToTopButton() {
-    // Create scroll to top button
+    // Home-page-only CTA (id="home" is unique to layouts/index.html's hero).
+    if (!document.getElementById('home')) {
+        return;
+    }
+
+    // Create the floating button
     const scrollButton = document.createElement('button');
-    scrollButton.className = 'scroll-to-top';
-    scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    scrollButton.setAttribute('aria-label', 'Scroll to top');
+    scrollButton.className = 'scroll-to-top rush-jump-btn';
+    scrollButton.textContent = 'Rush!';
+    scrollButton.setAttribute('aria-label', 'Jump to the sign-up form');
     document.body.appendChild(scrollButton);
-    
+
     // Show/hide button based on scroll position
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
@@ -86,11 +93,13 @@ function initializeScrollToTopButton() {
             scrollButton.classList.remove('show');
         }
     });
-    
-    // Scroll to top on click
+
+    // Scroll to the sign-up form on click
     scrollButton.addEventListener('click', () => {
+        const target = document.getElementById('join-interest');
+        if (!target) return;
         window.scrollTo({
-            top: 0,
+            top: target.offsetTop - 100,
             behavior: 'smooth'
         });
     });

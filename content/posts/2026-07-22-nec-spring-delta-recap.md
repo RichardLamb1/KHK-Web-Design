@@ -3,6 +3,11 @@ title = "Recap: NEC Spring '26 with Delta Chapter"
 date = 2026-07-22
 author = "Katie Leitz"
 image = "assets/img/postImgs/nec-spring-delta-recap.jpeg"
+
+# TEMP (Temp branch): News deactivated, individual post hidden. Remove this block to restore.
+[build]
+  render = false
+  list = false
 +++
 
 This spring, a group of our members traveled to represent Delta Chapter at the National Executive Council meeting, connecting with sister chapters from across the country.

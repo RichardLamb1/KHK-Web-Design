@@ -3,6 +3,10 @@
 #
 # photo is optional (site-relative path, e.g. "assets/img/members/Doe, Jane.jpg");
 # leave it blank and the card falls back to a placeholder image.
+#
+# available is optional too — omit it (the default) to show the card, or
+# set `available: false` to keep an incomplete entry in this file without
+# rendering it on the page (used below for entries still missing a photo/quote).
 - name: "Tim Bostanche"
   pledge_class: "Fall 2019 Pledge Class"
   position: "Software Engineer @ Google"
@@ -33,13 +37,16 @@
   position: "Founder, Example Startup"
   photo: ""
   quote: "Quote incoming"
+  available: false
 - name: "Neha Talluri"
   pledge_class: "Fall 2022 Pledge Class"
   position: "Research Engineer, Example Labs"
   photo: ""
   quote: "Quote incoming"
+  available: false
 - name: "Jerry Peplinski"
   pledge_class: "Spring 2024 Pledge Class"
   position: "Analyst, Example Financial"
   photo: ""
   quote: "Quote incoming"
+  available: false

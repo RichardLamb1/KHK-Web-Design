@@ -103,7 +103,10 @@
                     <h2 class="display-5 fw-bold mt-2 mb-4">Our Home</h2>
                     <p class="lead mb-3">{{ $teaser.lead }}</p>
                     <p class="mb-4">{{ $teaser.copy }}</p>
+                    {{/* TEMP (Temp branch): button hidden while /our-home/ is deactivated.
+                         Restore this line to bring it back.
                     <a href="{{ $teaser.button_url }}" class="btn btn-primary">{{ $teaser.button_text }}</a>
+                    */}}
                 </div>
                 <div class="col-lg-6">
                     <img src="{{ $teaser.image | relURL }}" alt="{{ $teaser.image_alt }}" class="img-fluid rounded-3 shadow-lg" loading="lazy">
@@ -125,6 +128,7 @@
                 </button>
                 <div class="alumni-belt" id="alumniBelt">
                     {{ range site.Data.alumni_testimonials }}
+                    {{ if ne .available false }}
                     <div class="alumni-card">
                         <img src="{{ if .photo }}{{ .photo | relURL }}{{ else }}{{ "assets/img/rick-cropped.png" | relURL }}{{ end }}" alt="Alumni headshot" class="alumni-card-img" loading="lazy">
                         <div class="alumni-card-body">
@@ -134,6 +138,7 @@
                             <p class="alumni-quote mb-0">&quot;{{ .quote }}&quot;</p>
                         </div>
                     </div>
+                    {{ end }}
                     {{ end }}
                 </div>
                 <button class="belt-control belt-control-next" type="button" aria-label="Scroll to next alumnus">

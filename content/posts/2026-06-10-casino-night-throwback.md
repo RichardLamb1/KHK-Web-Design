@@ -3,6 +3,11 @@ title = "Throwback: Spring Casino Night"
 date = 2026-06-10
 author = "Olivia Cerro"
 image = "assets/img/postImgs/casino-night-throwback.jpg"
+
+# TEMP (Temp branch): News deactivated, individual post hidden. Remove this block to restore.
+[build]
+  render = false
+  list = false
 +++
 
 With finals season behind us, we're looking back at one of our favorite socials of the spring semester — Casino Night!

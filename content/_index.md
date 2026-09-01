@@ -6,7 +6,7 @@ member_directory_url = "/members/"
 [hero]
 crest = "assets/svg/crest.svg"
 heading = "Welcome to KHK"
-subheading = "Delta Chapter | University of Wisconsin-Madison"
+subheading = "University of Wisconsin-Madison"
 lead = "A co-ed professional fraternity dedicated to fostering excellence in Engineering and Computer Science through professional development, community, and lifelong brotherhood."
 
 [about_teaser]
@@ -23,17 +23,17 @@ about_paragraphs = [
 image = "assets/img/resume_workshop.jpg"
 image_alt = "Resume Workshop"
 title = "Professional Development"
-text = "Resume Workshops, Industry Talks, Study Nights, Networking Events, Career Guidance"
+text = "With many connections through our alumni network and the guidance they've left behind, we conduct resume workshops, industry talks, networking events and more to empower our members the best they can be for finding satisfying, well-placed careers." 
 [[what_we_do]]
 image = "assets/img/executive_board.jpg"
-image_alt = "Executive Board"
+image_alt = "Studying Together"
 title = "Academic Support"
-text = "Study Nights, Resource Provision, Office Hours"
+text = "Academic success is an important part of any student's university life. We organize study nights, our own office hour system, and provide many class-based resources to enable our members to perform their best."
 [[what_we_do]]
 image = "assets/img/spring_2025_casino_night.jpg"
 image_alt = "Casino Night"
 title = "Building Brotherhood"
-text = "Entertainment, Socializing, Fundraising"
+text = "The heart and soul of KHK - our brotherhood. We are committed to building strong friendships among our actives that will outlive their time as actives at KHK, through social events, movie nights, fundraisers, and more."
 
 [[member_stats]]
 number = "50+"
@@ -66,7 +66,7 @@ image_alt = "Alumni Award"
 paragraphs = [
   "Our alumni are spread across the globe, working at leading companies in engineering, software development, and technology.",
   "They continue to support our chapter through mentorship, career guidance, and networking opportunities.",
-  "KHK is more than a college experience—it's a lifetime of friendship and professional development.",
+  "We aim for KHK to be far beyond just a college experience. We mean for it to establish a lifetime of friendship while letting our member attain the professional success they seek.",
 ]
 button_url = "https://daa.khk.org/"
 +++

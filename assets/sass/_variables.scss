@@ -12,7 +12,7 @@
     --accent-color: #ffc72c;
     --page-bg: #f7f5fb;
     --surface-bg: #ffffff;
-    --surface-bg-alt: #f3eff9;
+    --surface-bg-alt: #e6dcf3;
     --surface-bg-strong: #2a1545;
     --text-primary: #212529;
     --text-secondary: #555d66;
@@ -26,7 +26,7 @@
 :root[data-bs-theme="dark"] {
     --page-bg: #120d1b;
     --surface-bg: #1a1427;
-    --surface-bg-alt: #241a35;
+    --surface-bg-alt: #2f2247;
     --surface-bg-strong: #0f0818;
     --text-primary: #f3edf9;
     --text-secondary: #c8c0d5;
@@ -40,7 +40,7 @@
     :root:not([data-bs-theme="light"]) {
         --page-bg: #120d1b;
         --surface-bg: #1a1427;
-        --surface-bg-alt: #241a35;
+        --surface-bg-alt: #2f2247;
         --surface-bg-strong: #0f0818;
         --text-primary: #f3edf9;
         --text-secondary: #c8c0d5;

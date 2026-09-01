@@ -2,6 +2,11 @@
 title = 'Fraternity House'
 layout = 'our-home'
 
+# TEMP (Temp branch): page deactivated. Remove this block to restore.
+[build]
+  render = false
+  list = false
+
 [hero]
 kicker = "Our Home"
 heading = "The KHK Delta House"
