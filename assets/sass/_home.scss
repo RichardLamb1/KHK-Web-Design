@@ -336,6 +336,31 @@
     }
 }
 
+// "Join Our Brotherhood" steps the homepage's white/lavender background
+// cycle up a notch here instead of repeating the same alt lavender used by
+// the Events and About sections elsewhere on this page — the plain
+// alternation wasn't a strong enough jump next to "Our Members" (white), so
+// this section instead uses the site's dark accent surface (the same one
+// .about-intro-section uses on the About page), with light text and an
+// accent-gold subheading to match — the same pairing the footer already
+// uses on that same dark-purple background.
+.rush-cta-section {
+    background: var(--surface-bg-strong);
+
+    h2 {
+        color: #fff;
+    }
+
+    h4 {
+        color: var(--accent-color);
+    }
+
+    p,
+    ul li {
+        color: rgba(255, 255, 255, 0.85);
+    }
+}
+
 // ---------- Alumni ----------
 
 .alumni-section {

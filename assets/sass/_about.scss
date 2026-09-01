@@ -118,6 +118,13 @@
     }
 }
 
+// "Our History" sits between "Our Values" and "Our Home" (layouts/_default/about.html),
+// both of which are --surface-bg-alt via .bg-light — giving this one its own background
+// keeps it from being the same color as either of its neighbors.
+.history-section {
+    background: var(--surface-bg);
+}
+
 // ---------- Vision / Mission — background overlay variant ----------
 
 .overlay-feature-section {

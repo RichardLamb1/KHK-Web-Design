@@ -2,6 +2,24 @@
 // RUSH PAGE STYLES — ported from css/rush.css
 // ==========================================
 
+// "What KHK Does" would otherwise inherit its background from .rush-section
+// in _home.scss (that rule was written for the homepage's "Join Our
+// Brotherhood" section, id="rush" — this page's plain .rush-section element
+// picks it up too, by accident, since Hugo compiles every partial into one
+// stylesheet). This dedicated class overrides it so the section directly
+// above ("Dates for Rush", --surface-bg-alt via .bg-light) and this one
+// don't render as the same adjacent background.
+.what-khk-does-section {
+    background: var(--surface-bg);
+}
+
+// .rush-socials has no background rule of its own otherwise, so it falls
+// through to the page's base --page-bg — identical to .rush-faq right
+// before it. This keeps the two adjacent sections visually distinct.
+.rush-socials {
+    background: var(--surface-bg);
+}
+
 .rush-hero {
     position: relative;
     // Page-specific override (was an inline <style> block in rush.html):
