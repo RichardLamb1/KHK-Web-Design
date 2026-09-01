@@ -33,7 +33,7 @@
 
 .view-all-link {
     color: var(--secondary-color);
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
     white-space: nowrap;
 
@@ -86,7 +86,7 @@
     display: block;
     color: var(--text-muted);
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     margin-bottom: 0.5rem;
@@ -230,7 +230,7 @@
     margin-bottom: 1.5rem;
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
 
     &:hover {
         color: var(--secondary-color);
@@ -246,7 +246,7 @@
     margin-bottom: 1.5rem;
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     background: none;
     border: none;
     cursor: pointer;
@@ -292,7 +292,7 @@
     border-top: 1px solid var(--border-color);
     padding-top: 1.25rem;
     color: var(--text-secondary);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .post-not-found {

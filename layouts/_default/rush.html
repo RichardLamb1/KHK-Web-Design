@@ -7,7 +7,7 @@
             <div class="col-lg-7">
                 <span class="section-kicker">{{ $hero.kicker }}</span>
                 <h1 class="display-4 fw-bold mt-3 mb-4">{{ $hero.heading }}</h1>
-                <p class="lead mb-4">{{ $hero.lead }}</p>
+                <p class="mb-4">{{ $hero.lead }}</p>
                 <p class="mb-4 text-white-75">{{ $hero.copy }}</p>
                 <div class="d-flex flex-wrap gap-3">
                     <a href="#events" class="btn btn-primary btn-lg">See Upcoming Events</a>
@@ -63,7 +63,7 @@
                     <div class="info-panel h-100">
                         <h2 class="display-6 fw-bold mb-4">What KHK Does</h2>
                         {{ range $i, $p := .Params.what_khk_does }}
-                        <p class="{{ if eq (add $i 1) (len $.Params.what_khk_does) }}mb-0{{ else }}lead mb-3{{ end }}">{{ $p }}</p>
+                        <p class="{{ if eq (add $i 1) (len $.Params.what_khk_does) }}mb-0{{ else }}mb-3{{ end }}">{{ $p }}</p>
                         {{ end }}
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                 <div class="col-md-8 d-flex align-items-center">
                     <div class="testimonial-content">
                         <p class="testimonial-text mb-3">&quot;{{ $t.quote }}&quot;</p>
-                        <p class="testimonial-author mb-0"><strong>{{ $t.author }}</strong>, {{ $t.program }}</p>
+                        <p class="testimonial-author mb-0">{{ $t.author }}, {{ $t.program }}</p>
                     </div>
                 </div>
                 {{ if not $imageFirst }}
